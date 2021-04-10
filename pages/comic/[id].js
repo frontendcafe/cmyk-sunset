@@ -1,3 +1,6 @@
+import { useRouter } from 'next/router'
+
 export default function ComicDetail() {
-  return "ComicDetail";
+  const router = useRouter()
+  return `ComicDetail: ${router.query.id}`;
 }
