@@ -11,5 +11,5 @@ Para la aplicacion utilizamos Next.js como principal framework. Utilizamos Atom 
 ```bash
 git clone https://github.com/frontendcafe/cmyk-sunset.git
 cd cmyk-sunset
-npm run install && npm run dev
+npm install && npm run dev
 ```
