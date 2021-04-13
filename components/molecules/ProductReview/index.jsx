@@ -1,12 +1,12 @@
 import styles from './styles.modules.scss'
-import Paragraph from '../../atoms/Paragraph'
+import Review from '../Review'
 
-const ProductReview = () => {
+const ProductReview = (reviewsList) => {
   return (
     <div>
-      <Paragraph text="Nombre" />
-      <Paragraph text="Puntaje" />
-      <Paragraph text="Comentario" />
+      {reviewsList.map(item => {
+        <Review review={item} />
+      })}
     </div>
   );
 };
