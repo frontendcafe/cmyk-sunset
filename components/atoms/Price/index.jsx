@@ -1,11 +1,7 @@
-import './styles.module.scss';
+import styles from './styles.modules.scss'
 
 const Price = () => {
-  return (
-    <>
-      <p>Price</p>
-    </>
-  );
+  return <h2>Price</h2>;
 };
 
 export default Price;
