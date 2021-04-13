@@ -1,10 +1,15 @@
 import styles from './styles.modules.scss'
+import Title from '../../atoms/Title'
+import Image from '../../atoms/Image'
+import Price from '../../atoms/Price'
 
 const ProductInfo = () => {
   return (
-    <>
-      <p>Product Info</p>
-    </>
+    <div>
+      <Title/>
+      <Image/>
+      <Price/>
+    </div>
   );
 };
 

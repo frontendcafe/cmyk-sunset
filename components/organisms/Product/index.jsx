@@ -1,7 +1,7 @@
 import styles from './styles.modules.scss'
 import ProductDescription from '../../molecules/ProductDescription';
 import ProductInfo from '../../molecules/ProductInfo';
-import Review from '../../molecules/Review';
+import ProductReview from '../../molecules/Review';
 import Button from '../../atoms/Button'
 
 const Product = () => {
@@ -9,7 +9,7 @@ const Product = () => {
     <div>
       <ProductInfo/>
       <ProductDescription/>
-      <Review/>
+      <ProductReview/>
       <Button/>
     </div>
   );
