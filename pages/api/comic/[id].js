@@ -8,13 +8,11 @@ export default async function handler(req, res) {
       throw new Error("Error inesperado el id no es un numero");
     }
     var url = urlMarvel(idMarvel);
-    console.log(url);
 
     const dataMarvel = await fetch(url)
       .then((res) => res.json())
       .catch((error) => console.error("Error:", error))
       .then((response) => {
-        console.log(response);
         if (response.code == 200) {
           res.status(200).json(response.data.results[0]);
         } else {
