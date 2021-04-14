@@ -1,4 +1,4 @@
-import styles from './styles.modules.scss'
+import styles from './styles.module.scss'
 import ProductDescription from '../../molecules/ProductDescription';
 import ProductInfo from '../../molecules/ProductInfo';
 import ProductReview from '../../molecules/Review';

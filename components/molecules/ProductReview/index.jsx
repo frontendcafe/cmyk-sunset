@@ -1,4 +1,4 @@
-import styles from './styles.modules.scss'
+import styles from './styles.module.scss'
 import Review from '../Review'
 
 const ProductReview = (reviewsList) => {
