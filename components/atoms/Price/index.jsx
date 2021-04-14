@@ -1,11 +1,7 @@
 import './styles.module.scss';
 
 const Price = () => {
-  return (
-    <>
-      <p>Price</p>
-    </>
-  );
+  return <p>$500</p>
 };
 
 export default Price;
