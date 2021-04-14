@@ -1,0 +1,7 @@
+@import 'fonts';
+@import 'weights';
+
+* {
+  font-family: $default-font;
+  font-weight: $normal-weight;
+}
