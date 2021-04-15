@@ -1,10 +1,16 @@
+import React, { useEffect, useState } from 'react';
 import './styles.module.scss';
 
-const Button = () => {
+
+const Button = ({}) => {
+  
+  const [info, setInfo] = useState([]); 
+  
+
   return (
-    <>
-      <p>Button</p>
-    </>
+    <button>
+      {JSON.stringify(info)}
+    </button>
   );
 };
 

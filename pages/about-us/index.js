@@ -1,3 +1,11 @@
+import Button from '../../components/atoms/Button'
+
 export default function AboutUs() {
-  return "AboutUs";
-}
+  return( 
+  <div>
+    <p>"AboutUs"</p>
+    <Button
+      
+    />
+  </div>
+)}

@@ -1,0 +1,33 @@
+$bg: #E23636;
+$hover: #ED999A; 
+$disableBg: #D9D9D9; 
+$disableText: #F5F5F5;
+
+.colorBttn{
+    background-color: $bg;
+}
+.bttnSize-lg{
+    color: $disableText;
+    padding: 20px 8px;
+    width: 400px;
+    height: 50px;
+}
+.bttnSize-lg:hover{
+    background-color: $hover;
+    box-shadow: 0px 0px 10px #ED999A;
+}
+.bttnSize-lg:disabled{
+    background-color: $disableBg;
+    color: $disableText;
+}
+
+.bttnSize-md{
+    padding: 20px 8px;
+    width: 300px;
+    height: 50px;
+}
+.bttnSize-sm{
+    padding: 20px 8px;
+    width: 300px;
+    height: 50px;
+}
