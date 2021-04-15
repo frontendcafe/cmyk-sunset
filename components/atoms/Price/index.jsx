@@ -1,7 +1,7 @@
-import './styles.module.scss';
+import styles from './styles.module.scss';
 
-const Price = () => {
-  return <p>$500</p>
+const Price = ({ size = 'lg', price = '$500' }) => {
+	return <p className={`${styles.customPrice} ${styles[size]}`}>{price}</p>;
 };
 
 export default Price;
