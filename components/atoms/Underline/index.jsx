@@ -1,11 +1,7 @@
-import './styles.module.scss';
+import styles from './styles.module.scss';
 
 const Underline = () => {
-  return (
-    <>
-      <p>Underline</p>
-    </>
-  );
+  return <hr className={styles.line}/>
 };
 
 export default Underline;
