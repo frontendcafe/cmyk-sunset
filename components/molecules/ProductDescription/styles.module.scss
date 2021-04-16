@@ -1,0 +1,20 @@
+@import "assets/styles/colors.scss";
+
+.description {
+  padding: 1rem 0;
+
+  p {
+    margin-bottom: .15rem;
+    margin-top: .15rem;
+  }
+}
+
+.mobile {
+  width: 300px;
+  font-size: 14px;
+}
+
+.desktop {
+  width: 700px;
+  font-size: 30px;
+}
