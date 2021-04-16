@@ -1,11 +1,11 @@
-import './styles.module.scss';
+import s from './styles.module.scss';
 
-const Title = () => {
-  return (
-    <>
-      <p>Title</p>
-    </>
-  );
+const Title = ({ size = 'lg', text }) => {
+	return (
+		<>
+			<h1 className={`${s.title} ${s[size]}`}>{text}</h1>
+		</>
+	);
 };
 
 export default Title;
