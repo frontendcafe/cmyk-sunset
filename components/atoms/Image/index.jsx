@@ -1,11 +1,7 @@
-import './styles.module.scss';
+import ImageNext from 'next/image';
 
-const Image = () => {
-  return (
-    <>
-      <p>Image</p>
-    </>
-  );
+const Image = ({ src, alt = 'random-image' }) => {
+	return <ImageNext src={src} alt={alt} width={280} height={360} />;
 };
 
 export default Image;
