@@ -4,6 +4,6 @@ export default function Home() {
   return (
   <div>
     "Home"
-      <Button size="sm"/>
+      <Button size="sm">hola</Button>
   </div>);
 }

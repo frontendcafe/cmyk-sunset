@@ -7,22 +7,29 @@ $text: #F5F5F5;
 .bttn{
     color: $text;
     background-color: $bg;
-    padding: 20px 8px;
+    padding: 10px 8px;
     border-radius: 5px;
     border: 2px solid $bg;
     cursor: pointer;
-}
-.bttn:hover{
-    background-color: $hover;
-    box-shadow: 0px 0px 10px #ED999A;
-    border-color: #ED999A;
-}
-.disable{
-    .bttn:disabled{
+    text-align: center;
+    &:disabled {
         background-color: $disableBg;
         color: $text;
+        border-color: $disableBg;
+        cursor: not-allowed;
+        }
+    &:disabled:hover {
+        background-color: $disableBg;
+        border-color: $disableBg;
+        box-shadow: none;
     }
+    &:hover{
+            background-color: $hover;
+            box-shadow: 0px 0px 10px #ED999A;
+            border-color: #ED999A;
+        }
 }
+    
 
 //Sizes
 .lg{

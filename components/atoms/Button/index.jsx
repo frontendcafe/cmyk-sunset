@@ -1,13 +1,15 @@
 import React, {useState} from 'react';
 import styles from './styles.module.scss'; 
 
-const Button = ({size}) => {  
+const Button = ({size, disabled, children}) => {  
 
-  const type = size === "lg" ? styles.bttn && styles.lg : size === "md" ? styles.bttn && styles.md : size === "sm" ? styles.sm && styles.bttn : ""
+  const bttnSize = size === "lg" ? styles.lg : size === "md" ? styles.md : size === "sm" ? styles.sm : ""
 
   return (
-    <button className={`${type}`}>
-      Comprar
+    <button 
+      className={`${bttnSize} ${styles.bttn}`} 
+      disabled={disabled}
+    >{children}
     </button>
   );
 };
