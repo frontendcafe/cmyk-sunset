@@ -18,3 +18,47 @@
   width: 700px;
   font-size: 30px;
 }
+
+/* 
+
+@import "assets/styles/colors.scss";
+
+.info {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+}
+
+.mobile {
+  width: 330px;
+  .left {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    h1 {
+      font-size: 24px;
+      margin-top: 0;
+    }
+    .price {
+      font-size: 24px;
+      margin-bottom: 0;
+    }
+  }
+  .right {
+    width: 55%;
+    margin-right: -.5rem;
+    .img {
+      width: 180px;
+      height: 260px;
+      background-color: $gray400;
+    }
+  }
+}
+
+.desktop {
+  width: 1150px;
+  
+}
+*/

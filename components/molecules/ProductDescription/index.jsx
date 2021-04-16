@@ -20,3 +20,29 @@ const ProductDescription = ({
 };
 
 export default ProductDescription;
+
+/*
+import styles from './styles.module.scss';
+
+const ProductInfo = ({
+	size = 'mobile',
+	title = 'X-Men Legends #2',
+	currency = '$',
+	price = '500',
+	src = '',
+}) => {
+	return (
+    
+		<div className={`${styles.info} ${styles[size]}`}>
+			<div className={styles.left}>
+				<h1>{title}</h1>
+				<p className={styles.price}>{`${currency}${price}`}</p>
+			</div>
+			<img src={src} alt={title}/>
+      <div className={styles.right}><div className={styles.img}></div></div>
+			
+		</div>
+	);
+};
+
+*/
