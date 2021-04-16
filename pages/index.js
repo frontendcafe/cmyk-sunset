@@ -1,3 +1,9 @@
+import Button from 'components/atoms/Button'
+
 export default function Home() {
-  return "Home";
+  return (
+  <div>
+    "Home"
+      <Button size="sm"/>
+  </div>);
 }

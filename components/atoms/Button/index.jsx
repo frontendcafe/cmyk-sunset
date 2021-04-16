@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import './styles.module.scss';
+import React, {useState} from 'react';
+import styles from './styles.module.scss'; 
 
+const Button = ({size}) => {  
 
-const Button = ({}) => {
-  
-  const [info, setInfo] = useState([]); 
-  
+  const type = size === "lg" ? styles.bttn && styles.lg : size === "md" ? styles.bttn && styles.md : size === "sm" ? styles.sm && styles.bttn : ""
 
   return (
-    <button>
-      {JSON.stringify(info)}
+    <button className={`${type}`}>
+      Comprar
     </button>
   );
 };

@@ -1,33 +1,42 @@
-$bg: #E23636;
+$bg: #EC5151;
 $hover: #ED999A; 
 $disableBg: #D9D9D9; 
-$disableText: #F5F5F5;
+$text: #F5F5F5;
 
-.colorBttn{
+//global bttn
+.bttn{
+    color: $text;
     background-color: $bg;
-}
-.bttnSize-lg{
-    color: $disableText;
     padding: 20px 8px;
-    width: 400px;
-    height: 50px;
+    border-radius: 5px;
+    border: 2px solid $bg;
+    cursor: pointer;
 }
-.bttnSize-lg:hover{
+.bttn:hover{
     background-color: $hover;
     box-shadow: 0px 0px 10px #ED999A;
+    border-color: #ED999A;
 }
-.bttnSize-lg:disabled{
-    background-color: $disableBg;
-    color: $disableText;
+.disable{
+    .bttn:disabled{
+        background-color: $disableBg;
+        color: $text;
+    }
 }
 
-.bttnSize-md{
-    padding: 20px 8px;
+//Sizes
+.lg{
+    width: 400px;
+    height: 50px;
+     
+}
+.md{
     width: 300px;
     height: 50px;
-}
-.bttnSize-sm{
-    padding: 20px 8px;
-    width: 300px;
+} 
+
+.sm{
+    width: 200px;
     height: 50px;
 }
+
