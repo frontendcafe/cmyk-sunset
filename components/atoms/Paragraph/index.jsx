@@ -1,11 +1,9 @@
-import './styles.module.scss';
+import styles from './styles.module.scss';
 
-const Paragraph = () => {
-  return (
-    <>
-      <p>Paragraph</p>
-    </>
-  );
+const Paragraph = ({ size = 'lg', content = '' }) => {
+	return (
+		<p className={`${styles.defaultParagraph} ${styles[size]}`}>{content}</p>
+	);
 };
 
 export default Paragraph;
