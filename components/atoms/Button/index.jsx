@@ -6,7 +6,7 @@ const Button = ({size, disabled, children}) => {
 
   return (
     <button 
-      className={`${bttnSize} ${styles.bttn}`} 
+      className={`${styles[bttnSize]} ${styles.bttn}`} 
       disabled={disabled}
     >{children}
     </button>
