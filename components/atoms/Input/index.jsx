@@ -1,4 +1,4 @@
-import './styles.module.scss';
+import s from './styles.module.scss';
 
 const Input = () => {
   return (
