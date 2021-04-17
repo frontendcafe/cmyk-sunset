@@ -1,5 +1,5 @@
-$bg: #EC5151;
-$hover: #ED999A; 
+$bg: #E23636;
+$hover: #EC5151; 
 $disableBg: #D9D9D9; 
 $text: #F5F5F5;
 
@@ -24,18 +24,16 @@ $text: #F5F5F5;
         box-shadow: none;
     }
     &:hover{
-            background-color: $hover;
-            box-shadow: 0px 0px 10px #ED999A;
-            border-color: #ED999A;
-        }
+        background-color: $hover;
+        box-shadow: 0px 0px 10px $hover;
+        border-color: $hover;
+    }
 }
-    
 
 //Sizes
 .lg{
     width: 400px;
-    height: 50px;
-     
+    height: 50px;  
 }
 .md{
     width: 300px;
