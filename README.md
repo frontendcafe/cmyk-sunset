@@ -13,3 +13,13 @@ git clone https://github.com/frontendcafe/cmyk-sunset.git
 cd cmyk-sunset
 npm install && npm run dev
 ```
+## 👩‍💻 Consideraciones para codear
+ - El codigo debe escribirse en ingles
+ - Utilizamos atom design para estructurar nuestros componentes
+ - La estructura de un componente debe ser
+```
+  ComponentName/
+    index.jsx -> contiene el componente de React
+    styles.module.scss - contiene los estilos del componente
+```
+ - Los colores a utilizar en los estilos estan en [assets/styles/colors](https://github.com/frontendcafe/cmyk-sunset/blob/main/assets/styles/colors.scss)
