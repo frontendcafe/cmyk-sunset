@@ -1,0 +1,17 @@
+@import 'assets/styles/colors.scss';
+.title {
+	text-transform: capitalize;
+	color: $gray900;
+}
+.sm {
+	font-size: 18px;
+}
+.md {
+	font-size: 24px;
+}
+.lg {
+	font-size: 64px;
+}
+.xl {
+	font-size: 80px;
+}
