@@ -1,37 +1,52 @@
-@import "assets/styles/colors.scss";
+@import 'assets/styles/colors.scss';
 
 .customInput {
-    background: $gray50;
-    color: $gray600;
-    border: 2px solid $gray400;
-    width: 460px;
-    height: 40px;
-    font-size: 16px;
-    border-radius: 5px;
-    padding: 0 20px;
-    outline: none;
-    box-shadow: 0 4px 4px 0 rgba($gray100, 0.5);
+	background: $gray50;
+	color: $gray600;
+	border: 2px solid $gray400;
+	width: 460px;
+	height: 40px;
+	font-size: 16px;
+	border-radius: 5px;
+	padding: 0 20px;
+	outline: none;
+	box-shadow: 0 4px 4px 0 rgba($gray100, 0.5);
+
+	&::placeholder {
+		color: $gray200;
+	}
 }
 
 .customInput:focus {
-    border-color: $red600;
-    box-shadow: 0 4px 4px 0 rgba($red100, 0.5);
+	border-color: $red600;
+	box-shadow: 0 4px 4px 0 rgba($red100, 0.5);
 }
 
 .customInput[disabled] {
-    border-color: $gray200;
-    color: $gray200;
-    box-shadow: 0 4px 4px 0 rgba($gray100, 0.5);
+	border-color: $gray200;
+	color: $gray200;
+	box-shadow: 0 4px 4px 0 rgba($gray100, 0.5);
+}
+
+.dark {
+	background-color: $blue600;
+	color: $gray50;
+	border: 2px solid $gray50;
+	border-radius: 0;
+
+	&::placeholder {
+		color: $gray200;
+	}
 }
 
 .lg {
-    width: 460px;
+	width: 460px;
 }
 
 .md {
-    width: 322px;
+	width: 322px;
 }
 
 .sm {
-    width: 241.5px;
+	width: 241.5px;
 }
