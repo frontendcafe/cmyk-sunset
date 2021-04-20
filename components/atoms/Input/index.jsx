@@ -8,11 +8,10 @@ const Input = ({
 	onChange,
 	dark = false,
 }) => {
-	let cn = null;
-	dark ? cn = 'dark' : cn = '';
+	const cn = dark ? styles.dark : '';
 	return (
 		<input
-			className={`${s.customInput} ${s[size]} ${s[cn]}`}
+			className={`${s.customInput} ${s[size]} ${cn}`}
 			type={type}
 			placeholder={placeholder}
 			onChange={onChange}
