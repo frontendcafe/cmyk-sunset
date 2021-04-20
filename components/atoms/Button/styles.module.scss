@@ -1,49 +1,44 @@
-$bg-red:#E23636;
-$hover-red:#EC5151; 
-$bg-green:#83AA55;
-$hover-green:#A1C474;
-$disableBg:#D9D9D9; 
-$text:#F5F5F5;
+@import "assets/styles/colors.scss";
 
 //global bttn
 .btn{
-    color: $text;
-    background-color: $bg-red;
+    color: $gray50;
+    background-color: $red600;
     padding: 10px 8px;
     border-radius: 5px;
-    border: 2px solid $bg-red;
+    border: 2px solid $red600;
     cursor: pointer;
     text-align: center;
     &:disabled {
-        background-color: $disableBg;
-        color: $text;
-        border-color: $disableBg;
+        background-color: $gray200;
+        color: $gray50;
+        border-color: $gray200;
         cursor: not-allowed;
         }
     &:disabled:hover {
-        background-color: $disableBg;
-        border-color: $disableBg;
+        background-color: $gray200;
+        border-color: $gray200;
         box-shadow: none;
     }
 }
 
 //background and hover colors
 .red{
-    background-color: $bg-red;
-    border-color: $bg-red;
+    background-color: $red600;
+    border-color: $red600;
     &:hover{
-        background-color: $hover-red;
-        box-shadow: 0px 0px 10px $hover-red;
-        border-color: $hover-red;
+        background-color: $red400;
+        box-shadow: 0px 0px 10px $red400;
+        border-color: $red400;
     }
 }
 .green{
-    background-color: $bg-green;
-    border-color: $bg-green;
+    background-color: $green600;
+    border-color: $green600;
     &:hover{
-        background-color: $hover-green;
-        box-shadow: 0px 0px 10px $hover-green;
-        border-color: $hover-green;
+        background-color: $green400;
+        box-shadow: 0px 0px 10px $green400;
+        border-color: $green400;
     }
 }
 
