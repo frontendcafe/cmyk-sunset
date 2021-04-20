@@ -32,6 +32,7 @@
 	background-color: $blue600;
 	color: $gray50;
 	border: 2px solid $gray50;
+	border-radius: 0;
 
 	&::placeholder {
 		color: $gray200;
