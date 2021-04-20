@@ -1,0 +1,57 @@
+@import "assets/styles/colors.scss";
+
+//global bttn
+.btn{
+    color: $gray50;
+    background-color: $red600;
+    padding: 10px 8px;
+    border-radius: 5px;
+    border: 2px solid $red600;
+    cursor: pointer;
+    text-align: center;
+    &:disabled {
+        background-color: $gray200;
+        color: $gray50;
+        border-color: $gray200;
+        cursor: not-allowed;
+        }
+    &:disabled:hover {
+        background-color: $gray200;
+        border-color: $gray200;
+        box-shadow: none;
+    }
+}
+
+//background and hover colors
+.red{
+    background-color: $red600;
+    border-color: $red600;
+    &:hover{
+        background-color: $red400;
+        box-shadow: 0px 0px 10px $red400;
+        border-color: $red400;
+    }
+}
+.green{
+    background-color: $green600;
+    border-color: $green600;
+    &:hover{
+        background-color: $green400;
+        box-shadow: 0px 0px 10px $green400;
+        border-color: $green400;
+    }
+}
+
+//Sizes
+.lg{
+    width: 400px;
+    height: 50px;  
+}
+.md{
+    width: 300px;
+    height: 50px;
+} 
+.sm{
+    width: 200px;
+    height: 50px;
+}

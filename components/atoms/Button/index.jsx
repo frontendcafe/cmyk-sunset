@@ -1,10 +1,17 @@
-import './styles.module.scss';
+import styles from './styles.module.scss'; 
 
-const Button = () => {
+const Button = ({size, disabled, children, color}) => {  
+
+  const btnSize = size === "lg" ? styles.lg : size === "md" ? styles.md : size === "sm" ? styles.sm : ""
+
+  const colorbg = color === "green" ? styles.green : color === "red" ? styles.red : "" 
+
   return (
-    <>
-      <p>Button</p>
-    </>
+    <button 
+      className={`${btnSize} ${styles.btn} ${colorbg}`} 
+      disabled={disabled}
+    >{children}
+    </button>
   );
 };
 
