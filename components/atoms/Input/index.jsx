@@ -6,11 +6,12 @@ const Input = ({
 	type = 'text',
 	placeholder,
 	onChange,
+	dark = false,
 }) => {
-
+	const cn = dark ? styles.dark : '';
 	return (
 		<input
-			className={`${s.customInput} ${s[size]}`}
+			className={`${s.customInput} ${s[size]} ${cn}`}
 			type={type}
 			placeholder={placeholder}
 			onChange={onChange}
