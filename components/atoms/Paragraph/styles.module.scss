@@ -3,11 +3,48 @@
 
 .defaultParagraph {
 	color: $gray600;
-	font-size: 12px;
+}
+
+.sm {
+  font-size: 12px;
+}
+.md {
+  font-size: 14px;
+}
+.lg {
+  font-size: 16px;
+}
+.xl {
+  font-size: 20px;
+}
+
+
+@media (min-width: $breakpoint-mobile) {
+  .sm {
+    font-size: 16px;
+  }
+  .md {
+    font-size: 20px;
+  }
+  .lg {
+    font-size: 24px;
+  }
+  .xl {
+    font-size: 30px;
+  }
 }
 
 @media (min-width: $breakpoint-tablet) {
-	.defaultParagraph {
-		font-size: 22px;
-	}
+  .sm {
+    font-size: 18px;
+  }
+  .md {
+    font-size: 26px;
+  }
+  .lg {
+    font-size: 30px;
+  }
+  .xl {
+    font-size: 40px;
+  }
 }
