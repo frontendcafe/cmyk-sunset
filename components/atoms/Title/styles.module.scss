@@ -1,17 +1,50 @@
 @import 'assets/styles/colors.scss';
-.title {
+@import 'assets/styles/sizes.scss';
+
+
+.defaultTitle {
 	text-transform: capitalize;
 	color: $gray900;
 }
 .sm {
-	font-size: 18px;
+  font-size: 18px;
 }
 .md {
-	font-size: 24px;
+  font-size: 24px;
 }
 .lg {
-	font-size: 64px;
+  font-size: 38px;
 }
 .xl {
-	font-size: 80px;
+  font-size: 52px;
+}
+
+@media (min-width: $breakpoint-mobile) {
+  .sm {
+    font-size: 24px;
+  }
+  .md {
+    font-size: 34px;
+  }
+  .lg {
+    font-size: 48px;
+  }
+  .xl {
+    font-size: 70px;
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .sm {
+    font-size: 32px;
+  }
+  .md {
+    font-size: 48px;
+  }
+  .lg {
+    font-size: 56px;
+  }
+  .xl {
+    font-size: 80px;
+  }
 }
