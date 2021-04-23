@@ -2,7 +2,6 @@ import dbConnect from '../../../util/mongodb';
 import Order from '../../../models/order_model';
 
 export default async function handler(req, res) {
-	const { method } = req;
 	var idUser = req.query.idUser;
 
 	await dbConnect();
