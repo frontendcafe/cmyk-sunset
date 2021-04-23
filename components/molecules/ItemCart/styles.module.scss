@@ -1,0 +1,43 @@
+@import "assets/styles/colors.scss";
+
+.border{
+    border: 2px solid;
+    width: 180px;
+    height: 280px;
+}
+
+.container{
+    display:flex;
+    flex-direction: row; 
+    justify-content: space-around;
+    padding: 0px 20px;
+    margin: 15px 0px;
+}
+.info{
+    display:flex;
+    flex-direction: column;
+    padding: 0px;
+    margin: 0px;
+}
+.btncounter{
+    border-radius: 100%;
+    margin: 0px;
+    height: fit-content;
+    border: 1px solid;
+}
+.red{
+    background-color: $red600;
+    border-color: $red600;
+    padding: 1px 8px;
+}
+.green{
+    background-color: $green600;
+    border-color: $green600;
+    padding: 0px 6px;
+}
+.counter{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;  
+}

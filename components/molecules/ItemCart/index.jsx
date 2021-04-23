@@ -1,38 +1,39 @@
+import styles from './styles.module.scss';
+
 import Image from 'components/atoms/Image'
 import Title from 'components/atoms/Title'
 import Subtitle from 'components/atoms/Subtitle'
 import Paragraph from 'components/atoms/Paragraph'
 import Price from 'components/atoms/Price'
-import Button from 'components/atoms/Button'
-
 
 export default function ItemCart() {
     return (
-        <div >
-            "Checkout";
+        <div className={`${styles.container}`}>
             <Image
                 src={'/public/vercel.svg'}
                 alt={"alt"}
-                width={280}
-                height={360}
+                width={100}
+                height={300}
             />
-            <Title
-                size='md'
-                content=''
-            />
-            <Subtitle size="md">{ }</Subtitle>
-            <div className="">
-                <button className="">-</button>
-                <Paragraph content='Total:' />
-                <button className="">+</button>
-            </div>
-            <div>
-                <Paragraph content='Total:' />
-                <Price
+            <div className={`${styles.info}`}>
+                <Title
                     size='lg'
-                    price={"650"}
-                    currency
-                ></Price>
+                    content='X-Men'
+                />
+                <Subtitle size='lg'>{"Legends #2"}</Subtitle>
+                <div className={`${styles.counter} `}>
+                    <button className={`${styles.btncounter} ${styles.red}`}>-</button>
+                    <Paragraph size="lg" content='1' />
+                    <button className={`${styles.btncounter} ${styles.green} `}>+</button>
+                </div>
+                <div className={`${styles.counter}`}>
+                    <Paragraph size="lg" content='Total: ' />
+                    <Price
+                        size='md'
+                        currency="$"
+                        price={650}
+                    />
+                </div>
             </div>
         </div>
     )
