@@ -1,19 +1,19 @@
 const mongoose = require('mongoose');
 
-const orderShema = mongoose.Schema({
+const orderShema = new mongoose.Schema({
 	_id: mongoose.Schema.Types.ObjectId,
 	userId: { type: String, required: true },
 	userName: { type: String, required: true },
 	totalAmount: { type: Number, required: true },
 	itemsCount: Number,
 	orderStatus: String,
-    payMethod: String,
-    payId:String,
-    payStatus:String,
-    deliveryMethod: String,
-    deliveryAdress: String,
-    delivered: Date,
-    finished: Boolean,
+	payMethod: String,
+	payId: String,
+	payStatus: String,
+	deliveryMethod: String,
+	deliveryAdress: String,
+	delivered: Date,
+	finished: Boolean,
 	createdAt: Date,
 	updatedAt: Date,
 	items: [
@@ -22,8 +22,10 @@ const orderShema = mongoose.Schema({
 			idMarve: String,
 			title: String,
 			quantity: Number,
-            price: Number,
-            total: Number
+			price: Number,
+			total: Number,
 		},
 	],
 });
+
+module.exports = mongoose.models.Order || mongoose.model('Order', orderShema);
