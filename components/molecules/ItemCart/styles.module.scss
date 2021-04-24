@@ -1,29 +1,24 @@
 @import "assets/styles/colors.scss";
-
-.border{
-    border: 2px solid;
-    width: 180px;
-    height: 280px;
-}
+@import 'assets/styles/sizes.scss';
 
 .container{
     display:flex;
-    flex-direction: row; 
+    flex-direction: column; 
     justify-content: space-around;
     padding: 0px 20px;
     margin: 15px 0px;
 }
+.detail{
+    margin: 0px 10px;
+}
 .info{
-    display:flex;
-    flex-direction: column;
-    padding: 0px;
-    margin: 0px;
+    display: flex;
 }
 .btncounter{
+    border: 1px solid;
     border-radius: 100%;
     margin: 0px;
     height: fit-content;
-    border: 1px solid;
 }
 .red{
     background-color: $red600;
@@ -35,9 +30,34 @@
     border-color: $green600;
     padding: 0px 6px;
 }
+.total{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: flex-end;
+}
 .counter{
     display:flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;  
+}
+
+@media (min-width: $breakpoint-mobile) {
+    .detail{
+        display: flex;
+        flex-direction: column;
+    }
+  }
+  
+@media (min-width: $breakpoint-tablet) {
+    .container{
+        display: flex;
+        flex-direction: row;
+    }
+    .detail{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
 }
