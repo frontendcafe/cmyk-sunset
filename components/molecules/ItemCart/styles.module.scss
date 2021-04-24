@@ -7,6 +7,8 @@
     justify-content: space-around;
     padding: 0px 20px;
     margin: 15px 0px;
+    background-color: $gray700;
+    width:fit-content;
 }
 .detail{
     margin: 0px 10px;
@@ -49,7 +51,6 @@
         flex-direction: column;
     }
   }
-  
 @media (min-width: $breakpoint-tablet) {
     .container{
         display: flex;
