@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const devShema = new mongoose.Schema({
-	// _id: mongoose.Schema.Types.ObjectId,
 	nombre: { type: String, required: true },
 	apellido: { type: String, required: true },
 	nick: { type: String, required: true },
