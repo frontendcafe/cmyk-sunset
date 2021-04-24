@@ -18,4 +18,4 @@ const devShema = new mongoose.Schema({
 	],
 });
 
-module.exports = mongoose.models.Dev || mongoose.model('Dev', orderShema);
+module.exports = mongoose.models.Dev || mongoose.model('Dev', devShema);
