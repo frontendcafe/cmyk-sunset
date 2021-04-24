@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
 
 const devShema = new mongoose.Schema({
-	nombre: { type: String, required: true },
-	apellido: { type: String, required: true },
+	name: { type: String, required: true },
+	lastname: { type: String, required: true },
 	nick: { type: String, required: true },
+	description: String,
 	url: String,
 	linkedin: String,
 	github: String,
