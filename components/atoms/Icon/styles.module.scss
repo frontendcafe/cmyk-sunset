@@ -20,12 +20,12 @@
 	}
 
 	&:disabled {
-		color: #efefef;
+		color: $gray50;
 	}
 
 	&:not(:disabled):hover {
 		cursor: pointer;
-		background-color: #efefef;
+		background-color: $gray50;
 	}
 
 	&.dark {

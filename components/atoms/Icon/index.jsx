@@ -7,17 +7,19 @@ const Icon = ({
 	hasCounter = false,
 	dark = false,
 	quantity = 0,
+	onClick,
 }) => {
 	let cn = hasCounter ? styles.hasCounter : '';
 	cn += dark ? styles.dark : '';
 	const counter = hasCounter ? <Counter quantity={quantity} /> : null;
 	return (
-		<>
-			<button disabled={isDisabled} className={`${styles.button} ${cn}`}>
-				<CgShoppingBag className={styles.icon} />
-				{counter}
-			</button>
-		</>
+		<button
+			disabled={isDisabled}
+			className={`${styles.button} ${cn}`}
+			onClick={onClick}>
+			<CgShoppingBag className={styles.icon} />
+			{counter}
+		</button>
 	);
 };
 
