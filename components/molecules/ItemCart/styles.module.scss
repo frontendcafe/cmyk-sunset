@@ -1,0 +1,64 @@
+@import "assets/styles/colors.scss";
+@import 'assets/styles/sizes.scss';
+
+.container{
+    display:flex;
+    flex-direction: column; 
+    justify-content: space-around;
+    padding: 0px 20px;
+    margin: 15px 0px;
+    background-color: $gray700;
+    width: 90%;
+}
+.detail{
+    margin: 0px 10px;
+}
+.info{
+    display: flex;
+}
+.btncounter{
+    border: 1px solid;
+    border-radius: 100%;
+    margin: 0px;
+    height: fit-content;
+}
+.red{
+    background-color: $red600;
+    border-color: $red600;
+    padding: 1px 8px;
+}
+.green{
+    background-color: $green600;
+    border-color: $green600;
+    padding: 0px 6px;
+}
+.total{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: flex-end;
+}
+.counter{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;  
+}
+
+@media (min-width: $breakpoint-mobile) {
+    .detail{
+        display: flex;
+        flex-direction: column;
+    }
+  }
+@media (min-width: $breakpoint-tablet) {
+    .container{
+        display: flex;
+        flex-direction: row;
+    }
+    .detail{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}
