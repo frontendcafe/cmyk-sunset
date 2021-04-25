@@ -24,7 +24,7 @@ export const DataProvider = ({ children }) => {
 	};
 
 	const logOut = () => {
-		setData('');
+		setData(null);
 		localStorage.removeItem('logged');
 		return true;
 	};
@@ -42,31 +42,3 @@ export const DataProvider = ({ children }) => {
 		</DataContext.Provider>
 	);
 };
-
-
-// HOW TO USE
-
-// in APP
-// import { DataProvider } from './context/DataContext';
-//  <DataProvider>
-// 		<Router>
-// 			<Route exact path='/' component={ListTodo} />
-// 			<Route path='/:id' component={Todo} />
-// 		</Router>
-//  </DataProvider>;
-
-// In Component
-
-// import React, { useContext } from 'react';
-// import { DataContext } from '../context/DataContext';
-
-// ...
-// const { data, setData, isLogged, logIn } = useContext(DataContext);
-
-// const handleLogged = () => {
-//     alert(isLogged());
-// };
-
-// logIn(dataFixed);
-
-// setData({ ...data, name: "Juan", is_logged: true });
