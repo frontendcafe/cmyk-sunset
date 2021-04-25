@@ -1,0 +1,70 @@
+@import 'assets/styles/colors.scss';
+@import 'assets/styles/sizes.scss';
+
+.button {
+	display: flex;
+	justify-content: center;
+	width: 45px;
+	height: 45px;
+	border: none;
+	align-items: center;
+	position: absolute;
+	border-radius: 50%;
+	background-color: transparent;
+	transition: all 0.35s;
+
+	.icon {
+		width: 25px;
+		height: 25px;
+		padding: 6px;
+	}
+
+	&:disabled {
+		color: $gray50;
+	}
+
+	&:not(:disabled):hover {
+		cursor: pointer;
+		background-color: $gray50;
+	}
+
+	&.dark {
+		color: $gray50;
+
+		&:hover {
+			color: black;
+		}
+	}
+
+	&.hasCounter {
+		width: 50px;
+		height: 50px;
+
+		.icon {
+			width: 30px;
+			height: 30px;
+		}
+	}
+}
+
+@media (min-width: $breakpoint-mobile) {
+	.button {
+		width: 50px;
+		height: 50px;
+
+		.icon {
+			width: 30px;
+			height: 30px;
+		}
+
+		&.hasCounter {
+			width: 75px;
+			height: 75px;
+
+			.icon {
+				width: 48px;
+				height: 48px;
+			}
+		}
+	}
+}
