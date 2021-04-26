@@ -3,65 +3,91 @@
 @import 'assets/styles/weights.scss';
 
 .info {
-	border: 1px solid red;
+	background-color: $gray800;
+	color: white;
 	display: flex;
 	flex-direction: column;
 	align-items: left;
+	width: 300px;
+	height: 418px;
+	padding: 0 0.5rem;
 
 	h1 {
 		margin-bottom: 0.2rem;
 		font-weight: $bold-weight;
 	}
-  p {
-    margin-top: 0rem;
-		margin-bottom: .7rem;
+
+	.img {
+		background-color: $gray500;
+		width: 180px;
+		height: 260px;
+		align-self: center;
+		margin-top: 1rem;
+		margin-bottom: 2rem;
 	}
-	
-  .img {
-    background-color: $gray500;
-    width: 10rem;
-    height: 15rem;
-    align-self: center;
-  }
-  
-}
 
-.rating {
-  color: red;
-}
+	.comicInfoPrice {
+		background-color: $blue700;
+		font-weight: $bold-weight;
+		text-align: center;
 
-
-.bold {
-	font-weight: $bold-weight;
+		width: 3.5rem;
+		margin-bottom: 0.5rem;
+	}
 }
 
 @media (min-width: $breakpoint-mobile) {
 	.info {
-		border: 1px solid rgb(50, 4, 255);
+		width: 650px;
+		height: 553px;
+		padding: 0 1rem;
+		padding-bottom: 0.5rem;
+
+		.img {
+			width: 280px;
+			height: 430px;
+		}
+
+		.comicInfoPrice {
+			width: 5rem;
+		}
 	}
 }
 
 @media (min-width: $breakpoint-tablet) {
 	.info {
-		border: 1px solid rgb(0, 255, 64);
+		width: 1024px;
+		height: 580px;
+		padding: 0 1rem;
+		padding-bottom: 0.5rem;
+		display: grid;
+		grid-template-columns: 1fr .5fr 1fr 1fr;
+		grid-template-rows: auto;
+		grid-template-areas:
+			'image . header header'
+			'image . rating rating'
+			'image . price .'
+			'image . btn btn';
+
+		.title {
+			grid-area: header;
+      margin-top: 4rem;
+		}
+
+		.rating {
+			grid-area: rating;
+		}
+
+		.img {
+			width: 300px;
+			height: 430px;
+			grid-area: image;
+      margin-left: 2rem;
+		}
+		.comicInfoPrice {
+			width: 6.5rem;
+      margin: auto 0;
+			grid-area: price;
+		}
 	}
 }
-
-// .description {
-//   padding: 1rem 0;
-
-//   p {
-//     margin-bottom: 0.15rem;
-//     margin-top: 0.15rem;
-//   }
-
-//   .mobile {
-//     width: 300px;
-//     font-size: 14px;
-//   }
-
-//   .desktop {
-//     width: 700px;
-//     font-size: 30px;
-//   }
-// }
