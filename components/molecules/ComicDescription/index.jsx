@@ -11,16 +11,14 @@ const ComicDescription = ({
 }) => {
 	return (
 		<div className={styles.description}>
-			<Title content={title} size={defaultSize} className={styles.title} />
+			<Title content={title} size={defaultSize}/>
 			<Paragraph
 				content={content}
 				size={defaultSize}
-				className={styles.content}
 			/>
 			<Paragraph
 				content={`${pages} Páginas`}
 				size={defaultSize}
-				className={styles.pages}
 			/>
 			<ul>
 				<h4>Creadores</h4>
@@ -30,7 +28,6 @@ const ComicDescription = ({
 							<Paragraph
 								content={creator}
 								size={defaultSize}
-								className={styles.creator}
 							/>
 						</li>
 					);
