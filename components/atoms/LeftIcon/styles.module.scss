@@ -1,0 +1,44 @@
+@import 'assets/styles/colors';
+@import 'assets/styles/sizes.scss';
+
+.sideButton {
+	width: 50px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	border: none;
+	align-items: center;
+	border-radius: 50%;
+	background-color: transparent;
+	transition: all 0.35s;
+
+	.icon {
+		width: 30px;
+		height: 30px;
+		padding: 6px;
+	}
+	&:hover {
+		cursor: pointer;
+		background-color: $gray50;
+	}
+
+	&.dark {
+		color: $gray50;
+
+		&:hover {
+			color: black;
+		}
+	}
+}
+
+@media (min-width: $breakpoint-mobile) {
+	.sideButton {
+		width: 75px;
+		height: 75px;
+
+		.icon {
+			width: 48px;
+			height: 48px;
+		}
+	}
+}
