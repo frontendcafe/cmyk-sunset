@@ -10,12 +10,12 @@ const Icon = ({
 	onClick,
 }) => {
 	let cn = hasCounter ? styles.hasCounter : '';
-	cn += dark ? styles.dark : '';
+	let isDark = dark ? styles.dark : '';
 	const counter = hasCounter ? <Counter quantity={quantity} /> : null;
 	return (
 		<button
 			disabled={isDisabled}
-			className={`${styles.button} ${cn}`}
+			className={`${styles.button} ${cn} ${isDark}`}
 			onClick={onClick}>
 			<CgShoppingBag className={styles.icon} />
 			{counter}
