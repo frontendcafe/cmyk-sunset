@@ -1,0 +1,28 @@
+.title {
+	display: flex;
+
+	align-items: center;
+
+	padding-left: 0.6em;
+
+	// border-bottom: 1px solid rgb(71, 48, 202);
+	// line-height: 0.1em;
+	&:after {
+		content: '';
+		border-top: 2px solid;
+		margin: 0 2rem 0 0.4rem;
+		flex: 1 0 20px;
+		color: #303ac5;
+	}
+}
+
+.img {
+	margin: 0.6em;
+	width: 280px;
+	height: 360px;
+}
+.wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
