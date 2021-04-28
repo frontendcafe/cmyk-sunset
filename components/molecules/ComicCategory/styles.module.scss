@@ -1,12 +1,9 @@
+@import 'assets/styles/sizes.scss';
+
 .title {
 	display: flex;
-
 	align-items: center;
-
 	padding-left: 0.6em;
-
-	// border-bottom: 1px solid rgb(71, 48, 202);
-	// line-height: 0.1em;
 	&:after {
 		content: '';
 		border-top: 2px solid;
@@ -18,11 +15,23 @@
 
 .img {
 	margin: 0.6em;
-	width: 280px;
-	height: 360px;
+	max-width: 280px;
+	max-height: 360px;
 }
 .wrapper {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: space-around;
+}
+
+@media (max-width: $breakpoint-mobile) {
+	.img {
+		width: 40%;
+		margin: 0.6em;
+		max-width: 280px;
+		max-height: 360px;
+	}
+}
+
+@media (max-width: $breakpoint-tablet) {
 }
