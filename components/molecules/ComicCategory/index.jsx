@@ -10,7 +10,6 @@ const ComicCategory = ({
 	className,
 	onClick,
 }) => {
-	console.log('estamos');
 	return (
 		<div>
 			<Title size={size} content={title} className={styles.title} />
