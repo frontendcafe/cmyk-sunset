@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "es6",
+        "baseUrl": ".",
+        "paths": {
+            "components/*": ["./components/*"],
+            "assets/*": ["./assets/*"]
+        }
+    },
+    "exclude": ["node_modules", ".next"],
+    "include": ["components/**/*", "pages/**/*"]
+}

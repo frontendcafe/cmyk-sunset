@@ -1,0 +1,15 @@
+// Karla
+
+@font-face {
+  font-family: Karla;
+  src: url('../fonts/Karla/Karla-Regular.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Karla;
+  src: url('../fonts/Karla/Karla-Bold.ttf');
+  font-weight: 700;
+}
+
+$default-font: Karla;

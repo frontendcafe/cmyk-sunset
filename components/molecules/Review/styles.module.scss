@@ -1,0 +1,57 @@
+@import 'assets/styles/colors.scss';
+@import 'assets/styles/sizes.scss';
+
+.box {
+	color: $gray900;
+	background-color: $gray300;
+	font-size: 16px;
+	max-width: 160px;
+	max-height: 80px;
+	border-radius: 5px;
+	box-shadow: 0.1rem 0.1rem 0.2rem $gray400;
+	margin: 1rem;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+
+	.firstLine {
+		display: flex;
+		align-items: center;
+		p {
+			margin: 0.8rem 0.2rem;
+			margin-bottom: 0.5rem;
+		}
+	}
+
+	.secondLine {
+		p {
+			margin-top: 0;
+			margin-bottom: 0.8rem;
+		}
+	}
+}
+
+@media (min-width: $breakpoint-tablet) {
+	.box {
+		border-radius: 10px;
+		max-width: 280px;
+		max-height: 140px;
+		box-shadow: 0.2rem 0.2rem 0.3rem $gray400;
+
+		.firstLine {
+			p {
+				margin-top: 1.2rem;
+				margin-bottom: 0.8rem;
+			}
+		}
+
+		.secondLine {
+			p {
+				margin-top: 0;
+				margin-bottom: 1.2rem;
+			}
+		}
+	}
+}

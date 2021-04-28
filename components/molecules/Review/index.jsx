@@ -1,14 +1,23 @@
-import styles from './styles.module.scss'
-import Paragraph from '../../atoms/Paragraph'
+import styles from './styles.module.scss';
+import Paragraph from 'components/atoms/Paragraph';
 
-const Review = ({review}) => {
-  return (
-    <div>
-      <Paragraph text="review.nombre" />
-      <Paragraph text="review.puntaje" />
-      <Paragraph text="review.comentario" />
-    </div>
-  );
+const Review = ({
+	name = 'Galindez',
+	rating = '7.6 de 10',
+	comment = '"Gran Comic"',
+}) => {
+	return (
+		<div className={styles.box}>
+			<div className={styles.firstLine}>
+				<Paragraph content={name} />
+				<Paragraph content={'-'} />
+				<Paragraph content={rating} />
+			</div>
+			<div className={styles.secondLine}>
+				<Paragraph content={comment} />
+			</div>
+		</div>
+	);
 };
 
 export default Review;
