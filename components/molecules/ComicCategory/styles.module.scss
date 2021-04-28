@@ -14,6 +14,7 @@
 }
 
 .img {
+	width: 25%;
 	margin: 0.6em;
 	max-width: 280px;
 	max-height: 360px;
@@ -26,7 +27,7 @@
 
 @media (max-width: $breakpoint-mobile) {
 	.img {
-		width: 40%;
+		width: 25%;
 		margin: 0.6em;
 		max-width: 280px;
 		max-height: 360px;
@@ -34,4 +35,10 @@
 }
 
 @media (max-width: $breakpoint-tablet) {
+	.img {
+		width: 28%;
+		margin: 0.6em;
+		max-width: 280px;
+		max-height: 360px;
+	}
 }
