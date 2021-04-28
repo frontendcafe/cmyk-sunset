@@ -10,7 +10,7 @@ function urlMarvel(id = null) {
   var hash = CryptoJS.MD5(toHash);
 
   var url = process.env.MARVEL_URL;
-  var urlKeys = `?apikey=${publicKey}&ts=${ts}&hash=${hash}`;
+  var urlKeys = `?format=digital%20comic&formatType=comic&orderBy=onsaleDate&limit=100&apikey=${publicKey}&ts=${ts}&hash=${hash}`;
   
   id !== null ? (url += "/" + id + urlKeys) : (url += urlKeys);
 
