@@ -1,29 +1,30 @@
 import Button from 'components/atoms/Button/index'
 import Paragraph from 'components/atoms/Paragraph/index'
 import Price from 'components/atoms/Price/index'
+import Title from 'components/atoms/Title/index';
 import ItemCart from 'components/molecules/ItemCart/index'
-import React, { useState } from 'react'
+
 import styles from './styles.module.scss';
 
 //mismo fondo y organizar los items en el centro de la pantalla
 
 const Cart = () => {
-
-    const [counter, setCounter] = useState("")
-
     return (
         <div className={`${styles.container}`}>
-            <ItemCart />
-            <div className={`${styles.buyItems}`}>
-                <div className={`${styles.price}`}>
-                    <Paragraph content='Total: ' />
-                    <Price
-                        size='lg'
-                        price='500'
-                        currency='$'
-                    />
+            <Title size="lg" className={`${styles.title}`} content="Carrito" />
+            <div className={`${styles.box}`}>
+                <ItemCart />
+                <div className={`${styles.buyItems}`}>
+                    <div className={`${styles.price}`}>
+                        <Paragraph size="sm" content='Total: ' className={`${styles.paragraph}`} />
+                        <Price
+                            size='lg'
+                            price='500'
+                            currency='$'
+                        />
+                    </div>
+                    <Button size="md" color={"green"}>Comprar</Button>
                 </div>
-                <Button size="md" color={"green"}>Comprar</Button>
             </div>
         </div >
     );
