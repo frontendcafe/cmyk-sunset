@@ -6,8 +6,6 @@ import ItemCart from 'components/molecules/ItemCart/index'
 
 import styles from './styles.module.scss';
 
-//mismo fondo y organizar los items en el centro de la pantalla
-
 const Cart = () => {
     return (
         <div className={`${styles.container}`}>
