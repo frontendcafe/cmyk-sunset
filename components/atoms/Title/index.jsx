@@ -1,8 +1,8 @@
 import styles from './styles.module.scss';
 
-const Title = ({ size = 'md', content = '' }) => {
+const Title = ({ size = 'md', content = '', className }) => {
 	return (
-		<h1 className={`${styles.defaultTitle} ${styles[size]}`}>{content}</h1>
+		<h1 className={`${styles.defaultTitle} ${styles[size]} ${className}`}>{content}</h1>
 	);
 };
 

@@ -1,7 +1,13 @@
 @import 'fonts';
 @import 'weights';
+@import 'colors';
 
 * {
   font-family: $default-font;
   font-weight: $normal-weight;
+}
+
+body {
+  background-color: $gray800;
+  color: $gray50;
 }

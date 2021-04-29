@@ -3,9 +3,7 @@
 
 .counter {
 	position: absolute;
-	right: 0;
-	bottom: 0;
-	transform: translate(-50%, -50%);
+	transform: translate(50%, 50%);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -23,6 +21,6 @@
 		font-size: 14px;
 		width: 25px;
 		height: 25px;
-		transform: translate(-30%, -30%);
+		transform: translate(60%, 60%);
 	}
 }
