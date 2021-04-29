@@ -6,38 +6,36 @@ import Subtitle from 'components/atoms/Subtitle'
 import Paragraph from 'components/atoms/Paragraph'
 import Price from 'components/atoms/Price'
 
-export default function ItemCart() {
+export default function ItemCart({ className }) {
     return (
         <div className={`${styles.container}`}>
-            <div className={`${styles.info}`}>
-                <div className={`${styles.border}`}>
-                    <Image
-                        src={'/public/vercel.svg'}
-                        alt={"alt"}
-                        width={100}
-                        height={300}
-                    />
-                </div>
-                <div className={`${styles.detail}`}>
-                    <Title
-                        size='lg'
-                        content='X-Men'
-                    />
-                    <Subtitle size='lg'>{"Legends #2"}</Subtitle>
-                    <div className={`${styles.counter} `}>
+            <Image
+                src={'/jade.jpg'}
+                alt={"alt"}
+                width={90}
+                height={130}
+            />
+            <div className={`${styles.detail}`}>
+                <Title
+                    size='lg'
+                    content='X-Men Legends #2'
+                    className={`${styles.title}`}
+                />
+                <div className={`${styles.counterTotal}`}>
+                    <div className={`${styles.counter}`}>
                         <button className={`${styles.btncounter} ${styles.red}`}>-</button>
-                        <Paragraph size="xl" content='10' />
+                        <Paragraph size="md" content='10' className={`${styles.padding}`} />
                         <button className={`${styles.btncounter} ${styles.green} `}>+</button>
                     </div>
+                    <div className={`${styles.total}`}>
+                        <Paragraph size="sm" content='Total: ' className={`${styles.margin}`} />
+                        <Price
+                            size='md'
+                            currency="$"
+                            price={650}
+                        />
+                    </div>
                 </div>
-            </div>
-            <div className={`${styles.total}`}>
-                <Paragraph size="md" content='Total: ' />
-                <Price
-                    size='lg'
-                    currency="$"
-                    price={650}
-                />
             </div>
         </div>
     )
