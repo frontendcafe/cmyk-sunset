@@ -1,7 +1,9 @@
-import s from './styles.module.scss';
+import styles from './styles.module.scss';
 
-const Subtitle = ({ size, children }) => {
-	return <p className={`${s.customSubtitle} ${s[size]}`}>{children}</p>;
+const Subtitle = ({ size, children, className }) => {
+	return (
+		<p className={`${styles.customSubtitle} ${styles[size]} ${className}`}>{children}</p>
+	);
 };
 
 export default Subtitle;
