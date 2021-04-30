@@ -53,16 +53,7 @@
 	.navbar {
 		.navmenu,
 		.input {
-			position: fixed;
-			left: -100%;
-			top: 5rem;
-			flex-direction: column;
-			background-color: $gray50;
-			width: 80%;
-			border-radius: 10px;
-			text-align: center;
-			transition: 0.3s;
-			box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+			display: none;
 		}
 
 		.leftIcon {
