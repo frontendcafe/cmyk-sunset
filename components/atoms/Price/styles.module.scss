@@ -8,16 +8,16 @@
 }
 
 .sm {
-  font-size: 14px;
-}
-.md {
   font-size: 16px;
 }
+.md {
+  font-size: 20px;
+}
 .lg {
-  font-size: 18px;
+  font-size: 26px;
 }
 .xl {
-  font-size: 22px;
+  font-size: 32px;
 }
 
 
@@ -26,27 +26,27 @@
     font-size: 18px;
   }
   .md {
-    font-size: 22px;
+    font-size: 28px;
   }
   .lg {
-    font-size: 26px;
+    font-size: 38px;
   }
   .xl {
-    font-size: 32px;
+    font-size: 46px;
   }
 }
 
 @media (min-width: $breakpoint-tablet) {
   .sm {
-    font-size: 20px;
+    font-size: 22px;
   }
   .md {
-    font-size: 26px;
+    font-size: 36px;
   }
   .lg {
-    font-size: 32px;
+    font-size: 50px;
   }
   .xl {
-    font-size: 40px;
+    font-size: 62px;
   }
 }
