@@ -1,7 +1,6 @@
 import styles from './styles.module.scss';
 import ComicInfo from 'components/molecules/ComicInfo';
 import ComicDescription from 'components/molecules/ComicDescription';
-import Button from 'components/atoms/Button';
 
 const ComicDetail = ({
 	infoSize = 'md',
@@ -30,12 +29,6 @@ const ComicDetail = ({
 				currency={currency}
 				price={price}
 				size={priceSize}
-			/>
-			<Button
-				className={styles.buyButton}
-				size='md'
-				color='green'
-				children='AGREGAR AL CARRITO'
 			/>
 			<ComicDescription
 				className={styles.comicDescr}
