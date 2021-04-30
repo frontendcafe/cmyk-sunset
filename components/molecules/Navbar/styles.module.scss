@@ -2,11 +2,77 @@
 @import 'assets/styles/sizes.scss';
 
 .navbar {
-	// Test propertie
 	background-color: $gray900;
-
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0 7px;
+	padding: 0 20px;
+
+	.title {
+		cursor: pointer;
+	}
+
+	.leftIcon {
+		display: none;
+	}
+
+	.right {
+		display: flex;
+		align-items: center;
+		.icon {
+			margin-left: 40px;
+		}
+	}
+	a {
+		color: inherit;
+		text-decoration: inherit;
+	}
+
+	li {
+		list-style: none;
+	}
+}
+
+.navmenu {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 0;
+
+	.button {
+		margin-left: 40px;
+		cursor: pointer;
+
+		* {
+			color: $gray50;
+		}
+	}
+}
+
+@media (max-width: $breakpoint-xl) {
+	.navbar {
+		.navmenu,
+		.input {
+			position: fixed;
+			left: -100%;
+			top: 5rem;
+			flex-direction: column;
+			background-color: $gray50;
+			width: 80%;
+			border-radius: 10px;
+			text-align: center;
+			transition: 0.3s;
+			box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+		}
+
+		.leftIcon {
+			display: block;
+		}
+
+		.right {
+			.icon {
+				margin-left: 0;
+			}
+		}
+	}
 }
