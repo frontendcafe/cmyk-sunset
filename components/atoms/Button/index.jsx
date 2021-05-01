@@ -1,6 +1,6 @@
 import styles from './styles.module.scss'; 
 
-const Button = ({size, disabled, children, color}) => {  
+const Button = ({size, disabled, children, color, className}) => {  
 
   const btnSize = size === "lg" ? styles.lg : size === "md" ? styles.md : size === "sm" ? styles.sm : ""
 
@@ -8,7 +8,7 @@ const Button = ({size, disabled, children, color}) => {
 
   return (
     <button 
-      className={`${btnSize} ${styles.btn} ${colorbg}`} 
+      className={`${btnSize} ${styles.btn} ${colorbg} ${className}`} 
       disabled={disabled}
     >{children}
     </button>
