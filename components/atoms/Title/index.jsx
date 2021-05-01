@@ -1,10 +1,11 @@
-import s from './styles.module.scss';
+import styles from './styles.module.scss';
 
-const Title = ({ size = 'lg', text }) => {
+const Title = ({ size = 'md', children = '', className, hasBg = false }) => {
+	const bg = hasBg ? styles.hasBg : '';
 	return (
-		<>
-			<h1 className={`${s.title} ${s[size]}`}>{text}</h1>
-		</>
+		<h1 className={`${styles.defaultTitle} ${styles[size]} ${className} ${bg}`}>
+			{children}
+		</h1>
 	);
 };
 

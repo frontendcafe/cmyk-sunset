@@ -1,17 +1,52 @@
-@import "assets/styles/colors";
+@import 'assets/styles/colors.scss';
+@import 'assets/styles/sizes.scss';
+@import 'assets/styles/weights.scss';
 
 .customPrice {
-  color: $gray900;
-  font-family: 'Karla', sans-serif;
-  font-weight: bold;
+  color: $gray300;
+  font-weight: $bold-weight;
 }
 
 .sm {
-  font-size: 20px;
+  font-size: 16px;
 }
 .md {
-  font-size: 24px;
+  font-size: 20px;
 }
 .lg {
-  font-size: 36px;
+  font-size: 26px;
+}
+.xl {
+  font-size: 32px;
+}
+
+
+@media (min-width: $breakpoint-mobile) {
+  .sm {
+    font-size: 18px;
+  }
+  .md {
+    font-size: 28px;
+  }
+  .lg {
+    font-size: 38px;
+  }
+  .xl {
+    font-size: 46px;
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .sm {
+    font-size: 22px;
+  }
+  .md {
+    font-size: 36px;
+  }
+  .lg {
+    font-size: 50px;
+  }
+  .xl {
+    font-size: 62px;
+  }
 }
