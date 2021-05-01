@@ -39,19 +39,14 @@ const Navbar = ({ isLoggedIn = false, purchaseQuantity = 0, onChange }) => {
 
 	return (
 		<div className={styles.navbar}>
-			<LeftIcon dark={true} className={styles.leftIcon} />
+			<LeftIcon dark className={styles.leftIcon} />
 			<Link href='/'>
 				<a>
-					<Title
-						hasBg={true}
-						dark={true}
-						children={'Marvel Store'}
-						className={styles.title}
-					/>
+					<Title hasBg children={'Marvel Store'} className={styles.title} />
 				</a>
 			</Link>
 			<Input
-				dark={true}
+				dark
 				placeholder={'Search'}
 				className={styles.input}
 				onChange={onChange}
@@ -69,11 +64,7 @@ const Navbar = ({ isLoggedIn = false, purchaseQuantity = 0, onChange }) => {
 				</ul>
 				<Link href='/purchase'>
 					<a>
-						<Icon
-							dark={true}
-							quantity={purchaseQuantity}
-							className={styles.icon}
-						/>
+						<Icon dark quantity={purchaseQuantity} className={styles.icon} />
 					</a>
 				</Link>
 			</div>
