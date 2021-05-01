@@ -1,18 +1,42 @@
-@import 'assets/styles/colors';
+@import 'assets/styles/colors.scss';
+@import 'assets/styles/sizes.scss';
 
 .customSubtitle {
-    color: $gray600;
-    font-size: 16px;
+	.sm {
+		font-size: 18px;
+	}
+	.md {
+		font-size: 24px;
+	}
+	.lg {
+		font-size: 38px;
+	}
 }
 
-.lg {
-    font-size: 24px;
+@media (min-width: $breakpoint-mobile) {
+	.customSubtitle {
+		.sm {
+			font-size: 24px;
+		}
+		.md {
+			font-size: 34px;
+		}
+		.lg {
+			font-size: 48px;
+		}
+	}
 }
 
-.md {
-    font-size: 14px;
-}
-
-.sm {
-    font-size: 12px;
+@media (min-width: $breakpoint-tablet) {
+	.customSubtitle {
+		.sm {
+			font-size: 32px;
+		}
+		.md {
+			font-size: 48px;
+		}
+		.lg {
+			font-size: 56px;
+		}
+	}
 }
