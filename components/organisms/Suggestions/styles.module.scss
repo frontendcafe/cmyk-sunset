@@ -1,0 +1,35 @@
+@import 'assets/styles/colors.scss';
+@import 'assets/styles/sizes.scss';
+@import 'assets/styles/weights.scss';
+
+.suggestions {
+	width: 320px;
+
+	.subtitleBox {
+		margin-top: -0.5rem;
+	}
+
+	.suggestionsBox {
+		margin-top: -0.5rem;
+	}
+}
+
+@media (min-width: $breakpoint-tablet) {
+	.suggestions {
+		width: 100%;
+
+		.suggestionsBox {
+			display: flex;
+			justify-content: space-between;
+
+			.suggestion {
+				min-width: 410px;
+				margin-right: 3rem;
+			}
+
+			.suggestion:last-child {
+				margin-right: 2.5rem;
+			}
+		}
+	}
+}
