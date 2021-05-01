@@ -14,7 +14,7 @@ export const DataProvider = ({ children }) => {
 
 	const isLogged = () => {
 		var logged = JSON.parse(localStorage.getItem('logged'));
-		return logged == null ? false : logged.is_logged;
+		return !!logged;
 	};
 
 	const logIn = logged => {
