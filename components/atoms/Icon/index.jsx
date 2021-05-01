@@ -4,18 +4,19 @@ import Counter from 'components/atoms/Counter';
 
 const Icon = ({
 	isDisabled = false,
-	hasCounter = false,
 	dark = false,
 	quantity = 0,
 	onClick,
+	className,
 }) => {
-	let cn = hasCounter ? styles.hasCounter : '';
-	let isDark = dark ? styles.dark : '';
+	const hasCounter = !!quantity;
+	const cn = hasCounter ? styles.hasCounter : '';
+	const isDark = dark ? styles.dark : '';
 	const counter = hasCounter ? <Counter quantity={quantity} /> : null;
 	return (
 		<button
 			disabled={isDisabled}
-			className={`${styles.button} ${cn} ${isDark}`}
+			className={`${styles.button} ${cn} ${isDark} ${className}`}
 			onClick={onClick}>
 			<CgShoppingBag className={styles.icon} />
 			{counter}

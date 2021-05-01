@@ -4,13 +4,15 @@ import React, { useState } from "react";
 import Input from 'components/atoms/Input/index'
 import Title from 'components/atoms/Title/index';
 import Button from 'components/atoms/Button/index';
+import Price from 'components/atoms/Price/index';
 
 
 export default function CartForm() {
     const [values, setValues] = useState(
         {
             name: "", lastName: "", adress: "", numCard: "", dateCard: "", cvv: ""
-        });
+        }
+    );
 
     const set = (name) => {
         return ({ target: { value } }) => {
@@ -36,8 +38,10 @@ export default function CartForm() {
             setValues(
                 {
                     name: "", lastName: "", adress: "", numCard: "", dateCard: "", cvv: ""
-                });
-        } catch (e) {
+                }
+            );
+        }
+        catch (e) {
             alert(`Registration failed! ${e.message}`);
         }
     }
@@ -64,7 +68,6 @@ export default function CartForm() {
                             placeholder="Escribe aquí tu nombre"
                             onChange={set("name")}
                             required
-                            // className={`${styles.invalid}`}
                             value={values.name}
                         />
                     </label>
@@ -135,6 +138,7 @@ export default function CartForm() {
                                 value={values.cvv}
                             />
                         </label>
+                        <Price size="lg"></Price>
                         <Button size="md" className={`$styles.invalid`} color={"green"}>Finalizar compra</Button>
                     </div>
                 </div>
