@@ -9,9 +9,9 @@ const Icon = ({
 	onClick,
 	className,
 }) => {
-	const hasCounter = quantity ? true : false;
-	let cn = hasCounter ? styles.hasCounter : '';
-	let isDark = dark ? styles.dark : '';
+	const hasCounter = !!quantity;
+	const cn = hasCounter ? styles.hasCounter : '';
+	const isDark = dark ? styles.dark : '';
 	const counter = hasCounter ? <Counter quantity={quantity} /> : null;
 	return (
 		<button
