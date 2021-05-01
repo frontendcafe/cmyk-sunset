@@ -9,7 +9,6 @@
 	flex-direction: column;
 	align-items: left;
 	width: 300px;
-	height: 418px;
 	padding: 0 0.5rem;
 
 	h1 {
@@ -34,6 +33,11 @@
 		width: 5rem;
 		margin-bottom: 0.5rem;
 	}
+
+  .buyButton {
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+  }
 }
 
 @media (min-width: $breakpoint-mobile) {
@@ -50,6 +54,10 @@
 		.comicInfoPrice {
 			width: 8rem;
 		}
+
+    .buyButton {
+      align-self: center;
+    }
 	}
 }
 
@@ -66,6 +74,7 @@
 			'image . header header'
 			'image . rating rating'
 			'image . price .'
+      'image . . .'
 			'image . btn btn';
 
 		.title {
@@ -83,10 +92,16 @@
 			grid-area: image;
       margin-left: 2rem;
 		}
+
 		.comicInfoPrice {
 			width: 10rem;
       margin: auto 0;
 			grid-area: price;
 		}
+
+    .buyButton {
+      grid-area: btn;
+      margin-left: 5rem;
+    }
 	}
 }

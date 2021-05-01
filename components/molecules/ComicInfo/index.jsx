@@ -3,6 +3,7 @@ import Title from 'components/atoms/Title';
 import Paragraph from 'components/atoms/Paragraph';
 import Image from 'components/atoms/Image';
 import Price from 'components/atoms/Price';
+import Button from 'components/atoms/Button'
 
 const ComicInfo = ({
   defaultSize = 'md',
@@ -25,6 +26,12 @@ const ComicInfo = ({
 				className={styles.comicInfoPrice}
 				size={priceSize}
 			/>
+      <Button
+					className={styles.buyButton}
+					size='md'
+					color='green'
+					children='AGREGAR AL CARRITO'
+				/>
 		</div>
 	);
 };
