@@ -1,49 +1,57 @@
 @import 'assets/styles/colors.scss';
 @import 'assets/styles/sizes.scss';
 
-
 .defaultTitle {
 	text-transform: capitalize;
 }
+.hasBg {
+	background-color: $red500;
+}
 .sm {
-  font-size: 18px;
+	font-size: 18px;
 }
 .md {
-  font-size: 24px;
+	font-size: 24px;
 }
 .lg {
-  font-size: 38px;
+	font-size: 38px;
 }
 .xl {
-  font-size: 52px;
+	font-size: 52px;
 }
 
 @media (min-width: $breakpoint-mobile) {
-  .sm {
-    font-size: 24px;
-  }
-  .md {
-    font-size: 34px;
-  }
-  .lg {
-    font-size: 48px;
-  }
-  .xl {
-    font-size: 70px;
-  }
+	.sm {
+		font-size: 24px;
+	}
+	.md {
+		font-size: 34px;
+	}
+	.lg {
+		font-size: 48px;
+	}
+	.xl {
+		font-size: 70px;
+	}
+	.hasBg {
+		padding: 0 10px;
+	}
 }
 
 @media (min-width: $breakpoint-tablet) {
-  .sm {
-    font-size: 32px;
-  }
-  .md {
-    font-size: 48px;
-  }
-  .lg {
-    font-size: 56px;
-  }
-  .xl {
-    font-size: 80px;
-  }
+	.sm {
+		font-size: 32px;
+	}
+	.md {
+		font-size: 48px;
+	}
+	.lg {
+		font-size: 56px;
+	}
+	.xl {
+		font-size: 80px;
+	}
+	.hasBg {
+		padding: 0 20px;
+	}
 }
