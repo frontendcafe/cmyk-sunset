@@ -1,21 +1,49 @@
 import styles from './styles.module.scss';
+import React, { useState } from "react";
 
 import Input from 'components/atoms/Input/index'
 import Title from 'components/atoms/Title/index';
-
-// cambiar la fuente, el color del placeholder y el focus del input 
-// agregar el required
-// :invalid
+import Button from 'components/atoms/Button/index';
 
 
 export default function CartForm() {
+    const [values, setValues] = useState(
+        {
+            name: "", lastName: "", adress: "", numCard: "", dateCard: "", cvv: ""
+        });
 
-    const inputHandler = (e) => {
-        console.log(e.target.value)
+    const set = (name) => {
+        return ({ target: { value } }) => {
+            setValues((oldValues) => ({ ...oldValues, [name]: value }));
+        };
+    };
+
+    const saveFormData = async () => {
+        const response = await fetch('/api/registration', {
+            method: 'POST',
+            body: JSON.stringify(values)
+        });
+        if (response.status !== 200) {
+            throw new Error(`Request failed: ${response.status}`);
+        }
+    }
+
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        try {
+            await saveFormData();
+            alert('Your registration was successfully submitted!');
+            setValues(
+                {
+                    name: "", lastName: "", adress: "", numCard: "", dateCard: "", cvv: ""
+                });
+        } catch (e) {
+            alert(`Registration failed! ${e.message}`);
+        }
     }
 
     return (
-        <div className={`${styles.container}`}>
+        <form className={`${styles.container}`} onSubmit={onSubmit}>
             <Title
                 size="md"
                 className={`${styles.titleHidden}`}
@@ -27,14 +55,17 @@ export default function CartForm() {
                     className={`${styles.title}`}
                     content="Datos de contacto"
                 />
-                <form className={`${styles.form}`}>
+                <div className={`${styles.form}`}>
                     <label>
                         Nombre
                         <Input
                             size='sm'
                             type='text'
                             placeholder="Escribe aquí tu nombre"
-                            onChange={inputHandler}
+                            onChange={set("name")}
+                            required
+                            // className={`${styles.invalid}`}
+                            value={values.name}
                         />
                     </label>
                     <label>
@@ -43,7 +74,9 @@ export default function CartForm() {
                             size='sm'
                             type='text'
                             placeholder="Escribe aquí tu Apellido"
-                            onChange={inputHandler}
+                            onChange={set("lastName")}
+                            required
+                            value={values.lastName}
                         />
                     </label>
                     <label>
@@ -52,25 +85,30 @@ export default function CartForm() {
                             size='sm'
                             type='text'
                             placeholder="Ej: San Martin 882, Cba"
-                            onChange={inputHandler}
+                            onChange={set("adress")}
+                            required
+                            value={values.adress}
                         />
                     </label>
-                </form>
+                </div>
                 <div className={`${styles.space}`}>
                     <Title
                         size="md"
                         className={`${styles.title}`}
                         content="Datos de la tarjeta"
                     />
-                    <form className={`${styles.card}`}>
-                        {/* debe tener entre 11 y 16 numeros  minlength="11" maxlength="16" size="10" */}
+                    <div className={`${styles.card}`}>
                         <label>
                             Número de la tarjeta
                             <Input
                                 size='sm'
                                 type='number'
                                 placeholder="Ej: 0123 4567 8901 1234"
-                                onChange={inputHandler}
+                                minLength="11"
+                                maxLength="16"
+                                pattern={"[-+]?[0-9]"}
+                                onChange={set("numCard")}
+                                value={values.numCard}
                             />
                         </label>
                         <label>
@@ -80,10 +118,10 @@ export default function CartForm() {
                                 isDisabled={false}
                                 type='date'
                                 placeholder="Ej: 04/12/2040"
-                                onChange={inputHandler}
+                                onChange={set("dateCard")}
+                                value={values.dateCard}
                             />
                         </label>
-                        {/* debe tener 3 size="10" */}
                         <label>
                             Código
                             <Input
@@ -91,12 +129,16 @@ export default function CartForm() {
                                 isDisabled={false}
                                 type='number'
                                 placeholder="Ej: 123"
-                                onChange={inputHandler}
+                                maxLength="3"
+                                pattern={"[-+]?[0-9]"}
+                                onChange={set("cvv")}
+                                value={values.cvv}
                             />
                         </label>
-                    </form>
+                        <Button size="md" className={`$styles.invalid`} color={"green"}>Finalizar compra</Button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </form>
     );
 }
