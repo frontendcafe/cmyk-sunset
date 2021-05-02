@@ -29,6 +29,8 @@ export const ComicProvider = ({ children }) => {
 				.map(comic => ({
 					...comic,
 					imageUrl: `${comic.images[0].path}.${comic.images[0].extension}`,
+					// Leave that comment to use in case that comic API limit us
+					// This would be a mockup image
 					// imageUrl: 'https://www.definicionabc.com/wp-content/uploads/Comic.jpg',
 					viewDetail: () => window.location.href = `/comic/${comic.id}`
 				}));
