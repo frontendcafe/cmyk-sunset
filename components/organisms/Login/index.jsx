@@ -2,8 +2,6 @@ import styles from './styles.module.scss';
 import Title from 'components/atoms/Title';
 import Subtitle from 'components/atoms/Subtitle';
 import LoginForm from 'components/molecules/LoginForm';
-import Image from 'components/atoms/Image'
-// import AuthGoogleProvider from 'components/atoms/AuthGoogleProvider'
 
 const Login = ({ defaultSize = 'md' }) => {
 	return (
@@ -22,17 +20,14 @@ const Login = ({ defaultSize = 'md' }) => {
 			</header>
 			<body>
 				<div className={styles.left}>
-        <div className={styles.portadaMarvel}><Image src='/marvel.svg' alt='Portada-Marvel'  /></div>
-					<div className={styles.portadaFoto}><Image src='/portrait.jpg' alt='Portada-Foto'  /></div>
-          
-				</div>
-
+        <img src='/marvel.svg' alt='Portada Marvel' className={styles.marvelImg} />
+					<img src='/portrait.svg' alt='Portada Heroes' className={styles.heroesImg}  />
+        </div>
         <div className={styles.redLine}></div>
 
 				<div className={styles.right}>
 					<LoginForm className={styles.form} />
 					<div className={styles.googleAuth}>
-						{/* <AuthGoogleProvider /> */}
 						<div className={styles.subtitleDiv}>
 							<Subtitle
 								children='Ingresa con'
