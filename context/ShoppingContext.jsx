@@ -17,15 +17,6 @@ const orderDataBase = {
 	createdAt: null,
 	updatedAt: null,
 	items: [],
-	// 	{
-	// 		id_item: mongoose.Schema.Types.ObjectId,
-	// 		idMarvel: String,
-	// 		title: String,
-	// 		quantity: Number,
-	// 		price: Number,
-	// 		total: Number,
-	// 	},
-	// ],
 };
 
 export const ShoppingProvider = ({ children }) => {
@@ -101,7 +92,6 @@ export const ShoppingProvider = ({ children }) => {
 	};
 
 	const checkout = async () => {
-		// Todo
 		const cart = JSON.parse(localStorage.getItem('cart'));
 		cart.orderStatus = 'finished';
 		cart.finished = true;
@@ -112,10 +102,8 @@ export const ShoppingProvider = ({ children }) => {
 			body: JSON.stringify(cart),
 		};
 		const response = await fetch('/api/orders', requestOptions);
-		const data = await response.json();
-		// Lo que devuleve.
-		//res.status(201).json({ success: true, data: order });
-		return data;
+		const resData = await response.json();
+		return resData;
 	};
 
 	return (
