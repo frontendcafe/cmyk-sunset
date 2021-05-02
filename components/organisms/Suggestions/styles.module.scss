@@ -24,7 +24,7 @@
 		margin-top: -0.2rem;
 
 		.hidden {
-			visibility: hidden;
+			display: none;
 		}
 	}
 }
@@ -51,7 +51,7 @@
 			justify-content: space-between;
 
 			.hidden {
-				visibility: visible;
+				display: flex;
 			}
 
 			.suggestion {

@@ -17,7 +17,9 @@ const Suggestion = ({
 					<Image src={src} className={styles.img} />
 				</div>
 				<div className={styles.rightCol}>
-					<Title content={title} size={titleSize} className={styles.title} />
+					<Title size={titleSize} className={styles.title}>
+						{title}
+					</Title>
 					<Button
 						className={styles.buyButton}
 						size='sm'
