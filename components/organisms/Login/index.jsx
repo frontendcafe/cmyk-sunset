@@ -1,9 +1,14 @@
 import styles from './styles.module.scss';
+import {useContext} from 'react';
+import {DataContext} from 'context/DataContext';
 import Title from 'components/atoms/Title';
 import Subtitle from 'components/atoms/Subtitle';
 import LoginForm from 'components/molecules/LoginForm';
+import AuthGoogleProvider from 'components/atoms/AuthGoogleProvider';
 
 const Login = ({ defaultSize = 'md' }) => {
+  const { isLogged } = useContext(DataContext);
+
 	return (
 		<div className={styles.login}>
 			<header className={styles.headerLogin}>
@@ -34,7 +39,9 @@ const Login = ({ defaultSize = 'md' }) => {
 								size={defaultSize}
 								className={styles.subtitle}
 							/>
+              
 						</div>
+            <AuthGoogleProvider className={styles.googleLogin} />
 					</div>
 				</div>
 			</body>
