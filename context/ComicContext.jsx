@@ -28,8 +28,8 @@ export const ComicProvider = ({ children }) => {
 				.filter(comic => !!comic.images.length)
 				.map(comic => ({
 					...comic,
-					// imageUrl: `${comic.images[0].path}.${comic.images[0].extension}`
-					imageUrl: 'https://www.definicionabc.com/wp-content/uploads/Comic.jpg',
+					imageUrl: `${comic.images[0].path}.${comic.images[0].extension}`,
+					// imageUrl: 'https://www.definicionabc.com/wp-content/uploads/Comic.jpg',
 					viewDetail: () => window.location.href = `/comic/${comic.id}`
 				}));
 
