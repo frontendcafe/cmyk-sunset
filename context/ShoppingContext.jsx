@@ -46,6 +46,14 @@ export const ShoppingProvider = ({ children }) => {
 		return cart;
 	};
 
+	const totalItemCart = cart => {
+		let total = 0;
+		cart.items.map(item => {
+			total += item.total;
+		});
+		return total;
+	};
+
 	const addItemCart = newItem => {
 		const cart = JSON.parse(localStorage.getItem('cart'));
 		const cursor = cart.items.findIndex(item =>
@@ -57,6 +65,7 @@ export const ShoppingProvider = ({ children }) => {
 			cart.items[cursor].quantity += newItem.quantity;
 			cart.items[cursor].total = cart.items[cursor].quantity * newItem.price;
 		}
+		cart.totalAmount = totalItemCart(cart);
 		localStorage.setItem('cart', JSON.stringify(cart));
 		setOrderData(cart);
 		return cart;
@@ -71,6 +80,7 @@ export const ShoppingProvider = ({ children }) => {
 			throw '404 id not found';
 		} else {
 			cart.items.splice(cursor, 1);
+			cart.totalAmount = totalItemCart(cart);
 			localStorage.setItem('cart', JSON.stringify(cart));
 			setOrderData(cart);
 			return true;
