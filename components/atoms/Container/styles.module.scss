@@ -1,0 +1,11 @@
+@import 'assets/styles/sizes';
+
+.container {
+  padding: 15px 0;
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .container {
+    padding: 30px;
+  }
+}

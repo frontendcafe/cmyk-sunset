@@ -1,0 +1,93 @@
+@import 'assets/styles/colors.scss';
+@import 'assets/styles/sizes.scss';
+@import 'assets/styles/weights.scss';
+
+.suggestion {
+	display: flex;
+	flex-direction: column;
+	width: 320px;
+
+	.suggestionBox {
+		background-color: $gray900;
+		border: 1px solid $red900;
+		display: grid;
+		grid-template-columns: 120px auto;
+		justify-content: space-between;
+		width: 100%;
+    padding: .5rem;
+
+		.leftCol {
+			.img {
+				background-color: $gray500;
+				width: 117px;
+				height: 164px;
+				align-self: center;
+			}
+		}
+
+		.rightCol {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: flex-start;
+			margin-left: 1rem;
+
+			.title {
+				font-weight: $bold-weight;
+				height: 110px;
+				overflow: hidden;
+			}
+
+			.buyButton {
+				display: flex;
+				align-items: center;
+				justify-content: space-around;
+				align-self: flex-end;
+				height: 2.5rem;
+				width: 7rem;
+			}
+		}
+	}
+}
+
+@media (min-width: $breakpoint-mobile) {
+	.suggestion {
+		.suggestionBox {
+			.rightCol {
+				.title {
+					font-size: 24px;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $breakpoint-tablet) {
+	.suggestion {
+		width: 410px;
+
+		.suggestionBox {
+			grid-template-columns: 160px auto;
+      padding: 1rem;
+
+			.leftCol {
+				.img {
+					width: 150px;
+					height: 230px;
+				}
+			}
+
+			.rightCol {
+				.title {
+					font-size: 34px;
+					font-weight: $bold-weight;
+				}
+
+				.buyButton {
+					height: 3rem;
+					width: 8rem;
+				}
+			}
+		}
+	}
+}

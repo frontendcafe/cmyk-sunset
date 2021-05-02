@@ -1,0 +1,38 @@
+@import 'assets/styles/colors.scss';
+@import 'assets/styles/sizes.scss';
+
+.social {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 2em;
+	width: 100%;
+}
+
+.image {
+	border-radius: 50%;
+}
+.title {
+	margin-left: 2rem;
+}
+.title span {
+	background-color: $blue500;
+}
+.container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-center;
+	padding: 25px 15px;
+	background-color: $gray700;
+}
+
+.code li {
+	display: inline;
+	margin-left: 0.2rem;
+	margin-right: 0.2rem;
+	padding-left: 0.2rem;
+	padding-right: 0.2rem;
+	background-color: $green500;
+}
