@@ -1,7 +1,8 @@
+import { useEffect, useState } from 'react';
+
 import Container from 'components/atoms/Container/index';
 import AppInfo from 'components/molecules/AppInfo';
 import Devs from 'components/organisms/Devs';
-import { useEffect, useState } from 'react';
 
 export default function AboutUs() {
   const [loading, setLoading] = useState(true);
