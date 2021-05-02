@@ -1,5 +1,7 @@
-@import 'assets/styles/colors.scss';
-@import 'assets/styles/sizes.scss';
+@import 'assets/styles/colors';
+@import 'assets/styles/sizes';
+
+$socialIconHeight: 60;
 
 .social {
 	display: flex;
@@ -8,6 +10,16 @@
 	align-items: center;
 	gap: 2em;
 	width: 100%;
+
+	a {
+		opacity: .75;
+		transition: all .2s;
+	
+		&:hover {
+			opacity: 1;
+			transform: scale(.95);
+		}
+	}
 }
 
 .image {
@@ -23,16 +35,22 @@
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: flex-center;
 	padding: 25px 15px;
 	background-color: $gray700;
+	width: 100%;
+	max-width: 320px;
 }
 
-.code li {
+.code > li {
 	display: inline;
 	margin-left: 0.2rem;
 	margin-right: 0.2rem;
 	padding-left: 0.2rem;
 	padding-right: 0.2rem;
 	background-color: $green500;
+}
+
+:export {
+  socialIconColor: $gray50;
+	socialIconHeight: $socialIconHeight;
 }
