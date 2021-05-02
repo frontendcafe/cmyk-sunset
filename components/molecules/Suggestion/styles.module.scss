@@ -5,16 +5,16 @@
 .suggestion {
 	display: flex;
 	flex-direction: column;
-	align-items: left;
 	width: 320px;
 
 	.suggestionBox {
-		border: 1px solid $red900;
 		background-color: $gray900;
-    padding: .5rem;
-		display: flex;
+		border: 1px solid $red900;
+		display: grid;
+		grid-template-columns: 120px auto;
 		justify-content: space-between;
 		width: 100%;
+    padding: .5rem;
 
 		.leftCol {
 			.img {
@@ -30,10 +30,12 @@
 			flex-direction: column;
 			justify-content: space-between;
 			align-items: flex-start;
-			margin-left: 2rem;
+			margin-left: 1rem;
 
 			.title {
 				font-weight: $bold-weight;
+				height: 110px;
+				overflow: hidden;
 			}
 
 			.buyButton {
@@ -65,6 +67,7 @@
 		width: 410px;
 
 		.suggestionBox {
+			grid-template-columns: 160px auto;
       padding: 1rem;
 
 			.leftCol {
