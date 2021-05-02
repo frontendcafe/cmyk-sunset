@@ -11,7 +11,7 @@
 		background-color: $gray900;
 		border: 1px solid $red900;
 		display: grid;
-		grid-template-columns: 160px auto;
+		grid-template-columns: 120px auto;
 		justify-content: space-between;
     padding: .5rem;
 		width: 100%;
@@ -67,6 +67,7 @@
 		width: 410px;
 
 		.suggestionBox {
+			grid-template-columns: 160px auto;
       padding: 1rem;
 
 			.leftCol {

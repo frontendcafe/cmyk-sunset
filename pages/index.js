@@ -1,4 +1,4 @@
-import { useCallback, useContext, useMemo } from "react";
+import { useContext } from "react";
 
 import { ComicContext } from 'context/ComicContext';
 import Navbar from "components/molecules/Navbar/index";
