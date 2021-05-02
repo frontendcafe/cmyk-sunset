@@ -86,12 +86,26 @@ export const ShoppingProvider = ({ children }) => {
 		cart.deliveryAdress = payDeli.payMethod;
 		localStorage.setItem('cart', JSON.stringify(cart));
 		setOrderData(cart);
-		
+
 		return order;
 	};
 
-	const checkout = () => {
+	const checkout = async () => {
 		// Todo
+		const cart = JSON.parse(localStorage.getItem('cart'));
+		cart.orderStatus = 'finished';
+		cart.finished = true;
+
+		const requestOptions = {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(cart),
+		};
+		const response = await fetch('/api/orders', requestOptions);
+		const data = await response.json();
+		// Lo que devuleve.
+		//res.status(201).json({ success: true, data: order });
+		return data;
 	};
 
 	return (
