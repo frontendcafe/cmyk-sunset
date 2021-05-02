@@ -2,13 +2,8 @@ import styles from './styles.module.scss';
 import Title from 'components/atoms/Title';
 import Subtitle from 'components/atoms/Subtitle';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
 
-//
-// MOVER CROSS A NAVBAR
-//
-
-const Sidebar = ({ isLoggedIn, className = '', menuCollapse }) => {
+const Sidebar = ({ isLoggedIn, menuCollapse }) => {
 	const active = menuCollapse ? styles.active : '';
 
 	let login = null;
@@ -58,9 +53,7 @@ const Sidebar = ({ isLoggedIn, className = '', menuCollapse }) => {
 	return (
 		<div className={`${styles.sidebar} ${active}`}>
 			<div className={styles.items}>
-				<span className={styles.head}>
-					<Title size={'lg'} children='Name' hasBg />
-				</span>
+				<Title size={'lg'} children='Name' hasBg />
 				<ul>
 					<li>
 						<Link href='/'>
