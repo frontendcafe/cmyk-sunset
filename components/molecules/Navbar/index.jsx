@@ -6,7 +6,12 @@ import Subtitle from 'components/atoms/Subtitle';
 import LeftIcon from 'components/atoms/LeftIcon/index';
 import Link from 'next/link';
 
-const Navbar = ({ isLoggedIn = false, purchaseQuantity = 0, onChange }) => {
+const Navbar = ({
+	isLoggedIn = false,
+	purchaseQuantity = 0,
+	onChange,
+	hasSearch
+}) => {
 	let login = null;
 	if (isLoggedIn) {
 		login = (
@@ -46,12 +51,14 @@ const Navbar = ({ isLoggedIn = false, purchaseQuantity = 0, onChange }) => {
 						<Title hasBg children={'Marvel Store'} className={styles.title} />
 					</a>
 				</Link>
-				<Input
-					dark
-					placeholder={'Search'}
-					className={styles.input}
-					onChange={onChange}
-				/>
+				{hasSearch && (
+					<Input
+						dark
+						placeholder={'Search'}
+						className={styles.input}
+						onChange={onChange}
+					/>
+				)}
 				<div className={styles.right}>
 					<ul className={styles.navmenu}>
 						<li className={styles.button}>
@@ -70,13 +77,15 @@ const Navbar = ({ isLoggedIn = false, purchaseQuantity = 0, onChange }) => {
 					</Link>
 				</div>
 			</div>
-			<Input
-				dark
-				size="sm"
-				placeholder={'Search'}
-				className={styles.search}
-				onChange={onChange}
-			/>
+			{hasSearch && (
+				<Input
+					dark
+					size='sm'
+					placeholder={'Search'}
+					className={styles.search}
+					onChange={onChange}
+				/>
+			)}
 		</>
 	);
 };
