@@ -1,55 +1,41 @@
-import styles from './styles.module.scss';
+import { useContext, useState } from 'react';
+import { BsX } from 'react-icons/bs';
+import Link from 'next/link';
+
 import Title from 'components/atoms/Title';
 import Icon from 'components/atoms/Icon';
 import Input from 'components/atoms/Input';
 import Subtitle from 'components/atoms/Subtitle';
 import LeftIcon from 'components/atoms/LeftIcon';
 import Sidebar from 'components/molecules/Sidebar';
-import Link from 'next/link';
-import { useState } from 'react';
-import { BsX } from 'react-icons/bs';
+import { DataContext } from 'context/DataContext';
 
-const Navbar = ({
-	isLoggedIn = false,
-	purchaseQuantity = 0,
-	onChange,
-	hasSearch
-}) => {
+import styles from './styles.module.scss';
+
+const Navbar = ({ purchaseQuantity = 0, onChange, hasSearch }) => {
 	const [sidebarOpen, setSidebarOpen] = useState(false);
+	const { isLogged, logOut } = useContext(DataContext);
 
 	const toggleMenuCollapse = () => {
 		sidebarOpen ? setSidebarOpen(false) : setSidebarOpen(true);
 	};
 
 	let login = null;
-	if (isLoggedIn) {
+	if (isLogged()) {
 		login = (
 			<li className={styles.button}>
-				<Link href='/sign-out'>
-					<a>
-						<Subtitle children={'Sign Out'} />
-					</a>
-				</Link>
+				<Subtitle onClick={logOut}>Sign Out</Subtitle>
 			</li>
 		);
 	} else {
 		login = (
-			<>
-				<li className={styles.button}>
-					<Link href='/sign-up'>
-						<a>
-							<Subtitle children={'Sign Up'} />
-						</a>
-					</Link>
-				</li>
-				<li className={styles.button}>
-					<Link href='/login'>
-						<a>
-							<Subtitle children={'Login'} />
-						</a>
-					</Link>
-				</li>
-			</>
+			<li className={styles.button}>
+				<Link href='/login'>
+					<a>
+						<Subtitle children={'Login'} />
+					</a>
+				</Link>
+			</li>
 		);
 	}
 
@@ -92,7 +78,7 @@ const Navbar = ({
 						</li>
 						{login}
 					</ul>
-					<Link href='/purchase'>
+					<Link href='/checkout'>
 						<a>
 							<Icon dark quantity={purchaseQuantity} className={styles.icon} />
 						</a>

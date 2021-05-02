@@ -3,12 +3,14 @@
 
 .sidebar {
 	background-color: $blue900;
-	width: 100%;
-	position: fixed;
+	box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+	height: 100vh;
 	left: -100%;
+	position: fixed;
 	top: 0;
 	transition: 0.3s;
-	box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+	width: 100%;
+	z-index: 9;
 
 	&.active {
 		left: 0;
@@ -21,6 +23,7 @@
 
 	.subtitle {
 		color: $gray50;
+		cursor: pointer;
 	}
 
 	// Reset Default Styles

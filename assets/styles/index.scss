@@ -11,3 +11,8 @@ body {
   background-color: $gray800;
   color: $gray50;
 }
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
