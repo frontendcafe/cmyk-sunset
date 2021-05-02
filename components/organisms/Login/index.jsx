@@ -8,6 +8,7 @@ import AuthGoogleProvider from 'components/atoms/AuthGoogleProvider';
 
 const Login = ({ defaultSize = 'md' }) => {
   const { isLogged } = useContext(DataContext);
+  if (isLogged()) window.location.href = '/';
 
 	return (
 		<div className={styles.login}>
