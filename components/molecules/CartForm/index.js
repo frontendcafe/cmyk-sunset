@@ -7,7 +7,7 @@ import Button from 'components/atoms/Button/index';
 import Price from 'components/atoms/Price/index';
 
 
-export default function CartForm() {
+export default function CartForm({ onSubmitForm }) {
     const [values, setValues] = useState(
         {
             name: "", lastName: "", adress: "", numCard: "", dateCard: "", cvv: ""
@@ -20,32 +20,15 @@ export default function CartForm() {
         };
     };
 
-    const saveFormData = async () => {
-        const response = await fetch('/api/registration', {
-            method: 'POST',
-            body: JSON.stringify(values)
-        });
-        if (response.status !== 200) {
-            throw new Error(`Request failed: ${response.status}`);
-        }
-    }
-
     const onSubmit = async (event) => {
         event.preventDefault();
         try {
-            await saveFormData();
-            alert('Your registration was successfully submitted!');
-            setValues(
-                {
-                    name: "", lastName: "", adress: "", numCard: "", dateCard: "", cvv: ""
-                }
-            );
+            onSubmitForm?.(values);
         }
         catch (e) {
             alert(`Registration failed! ${e.message}`);
         }
     }
-
     return (
         <form className={`${styles.container}`} onSubmit={onSubmit}>
             <Title
