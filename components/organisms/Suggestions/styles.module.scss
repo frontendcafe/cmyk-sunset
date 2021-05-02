@@ -3,10 +3,13 @@
 @import 'assets/styles/weights.scss';
 
 .suggestions {
-	width: 320px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 
 	.titleBox {
 		margin-top: -0.2rem;
+		width: 100%;
 
 		.title {
 			font-size: 15px;
@@ -21,10 +24,13 @@
 	}
 
 	.suggestionsBox {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
 		margin-top: -0.2rem;
 
 		.hidden {
-			visibility: hidden;
+			display: none;
 		}
 	}
 }
@@ -47,11 +53,12 @@
 		}
 
 		.suggestionsBox {
-			display: flex;
-			justify-content: space-between;
+			gap: 30px;
+			justify-content: space-around;
+			width: 100%;
 
 			.hidden {
-				visibility: visible;
+				display: flex;
 			}
 
 			.suggestion {

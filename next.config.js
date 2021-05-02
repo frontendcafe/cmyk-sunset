@@ -6,4 +6,7 @@ module.exports = {
     MARVEL_PUBLIC_KEY: "6aff0ed87c2f1bec2219c28098d9272c",
     MARVEL_URL: "https://gateway.marvel.com:443/v1/public/comics",
   },
+  images: {
+    domains: ['i.annihil.us', 'www.definicionabc.com'],
+  },
 };

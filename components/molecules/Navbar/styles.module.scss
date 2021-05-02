@@ -33,6 +33,11 @@
 	}
 }
 
+.search {
+	display: none;
+	margin: 20px auto;
+}
+
 .navmenu {
 	display: flex;
 	justify-content: space-between;
@@ -65,5 +70,8 @@
 				margin-left: 0;
 			}
 		}
+	}
+	.search {
+		display: flex;
 	}
 }

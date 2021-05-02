@@ -38,37 +38,46 @@ const Navbar = ({ isLoggedIn = false, purchaseQuantity = 0, onChange }) => {
 	}
 
 	return (
-		<div className={styles.navbar}>
-			<LeftIcon dark className={styles.leftIcon} />
-			<Link href='/'>
-				<a>
-					<Title hasBg children={'Marvel Store'} className={styles.title} />
-				</a>
-			</Link>
-			<Input
-				dark
-				placeholder={'Search'}
-				className={styles.input}
-				onChange={onChange}
-			/>
-			<div className={styles.right}>
-				<ul className={styles.navmenu}>
-					<li className={styles.button}>
-						<Link href='/about-us'>
-							<a>
-								<Subtitle children={'About Us'} />
-							</a>
-						</Link>
-					</li>
-					{login}
-				</ul>
-				<Link href='/purchase'>
+		<>
+			<div className={styles.navbar}>
+				<LeftIcon dark className={styles.leftIcon} />
+				<Link href='/'>
 					<a>
-						<Icon dark quantity={purchaseQuantity} className={styles.icon} />
+						<Title hasBg children={'Marvel Store'} className={styles.title} />
 					</a>
 				</Link>
+				<Input
+					dark
+					placeholder={'Search'}
+					className={styles.input}
+					onChange={onChange}
+				/>
+				<div className={styles.right}>
+					<ul className={styles.navmenu}>
+						<li className={styles.button}>
+							<Link href='/about-us'>
+								<a>
+									<Subtitle children={'About Us'} />
+								</a>
+							</Link>
+						</li>
+						{login}
+					</ul>
+					<Link href='/purchase'>
+						<a>
+							<Icon dark quantity={purchaseQuantity} className={styles.icon} />
+						</a>
+					</Link>
+				</div>
 			</div>
-		</div>
+			<Input
+				dark
+				size="sm"
+				placeholder={'Search'}
+				className={styles.search}
+				onChange={onChange}
+			/>
+		</>
 	);
 };
 
