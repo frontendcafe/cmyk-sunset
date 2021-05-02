@@ -1,0 +1,15 @@
+.container {
+  padding: 0 20px;
+
+  .title {
+    width: max-content;
+  }
+
+  .repoButton{
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    height: min-content;
+    margin: 25px 10px;
+  }
+}
