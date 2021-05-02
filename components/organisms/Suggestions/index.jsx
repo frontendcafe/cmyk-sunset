@@ -22,13 +22,13 @@ const Suggestions = ({ list }) => {
 
 			<div className={styles.suggestionsBox}>
 				{
-					!!list?.length && list.map(({id, imageUrl, title}, index) => (
+					!!list?.length && list.map(({id, imageUrl, title, viewDetail}, index) => (
 						<Suggestion 
 							key={id}
 							className={`${styles.suggestion} ${!!index && styles.hidden}`}
 							title ={title}
 							src ={imageUrl}
-							onClick=""
+							onClick={viewDetail}
 						/>
 					))
 				}

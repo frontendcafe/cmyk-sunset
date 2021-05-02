@@ -29,7 +29,8 @@ export const ComicProvider = ({ children }) => {
 				.map(comic => ({
 					...comic,
 					// imageUrl: `${comic.images[0].path}.${comic.images[0].extension}`
-					imageUrl: 'https://www.definicionabc.com/wp-content/uploads/Comic.jpg'
+					imageUrl: 'https://www.definicionabc.com/wp-content/uploads/Comic.jpg',
+					viewDetail: () => window.location.href = `/comic/${comic.id}`
 				}));
 
 				setComics(comics);

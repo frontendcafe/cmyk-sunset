@@ -6,9 +6,7 @@ import React from 'react';
 const ComicCategory = ({
 	title = 'title',
 	comics,
-	size = 'md',
-	className,
-	onClick,
+	size = 'md'
 }) => {
 	return (
 		<div>
@@ -21,7 +19,7 @@ const ComicCategory = ({
 						<div
 							key={key + 'i'}
 							className={styles.img}
-							onClick={() => onClick(comic)}>
+							onClick={() => comic.viewDetail()}>
 							<Image key={key} src={comic.imageUrl} alt={comic.alt} />
 						</div>
 					);
