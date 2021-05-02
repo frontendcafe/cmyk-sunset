@@ -1,3 +1,5 @@
+import Dev from '../../components/molecules/Dev';
+
 export default function Login() {
-  return "Login";
+	return <Dev />;
 }
