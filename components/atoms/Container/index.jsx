@@ -1,5 +1,7 @@
 import React from 'react';
 
+import withLoading from 'components/atoms/WithLoading';
+
 import styles from './styles.module.scss';
 
 function Container({children}) {
@@ -10,4 +12,4 @@ function Container({children}) {
   )
 }
 
-export default Container
+export default withLoading(Container);
