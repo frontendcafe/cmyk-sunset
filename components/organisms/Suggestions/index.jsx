@@ -19,9 +19,17 @@ const Suggestions = ({ list }) => {
 			</div>
 
 			<div className={styles.suggestionsBox}>
-				<Suggestion className={styles.suggestion} />
-				<Suggestion className={`${styles.suggestion} ${styles.hidden}`} />
-				<Suggestion className={`${styles.suggestion} ${styles.hidden}`} />
+				{
+					!!list?.length && list.map((comic, index) => (
+						<Suggestion 
+							key={comic.id}
+							className={`${styles.suggestion} ${index === 0 && styles.hidden}`}
+							title = 'X-Men Legends #2'
+							src = ''
+							onClick=""
+						/>
+					))
+				}
 			</div>
 		</div>
 	);

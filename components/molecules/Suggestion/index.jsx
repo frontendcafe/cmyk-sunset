@@ -8,12 +8,13 @@ const Suggestion = ({
 	titleSize = 'md',
 	src = '',
 	className,
+	onClick
 }) => {
 	return (
 		<div className={`${styles.suggestion} ${className}`}>
 			<div className={styles.suggestionBox}>
 				<div className={styles.leftCol}>
-					<div className={`${styles.img}`}></div>
+					<Image src={src} className={styles.img} />
 				</div>
 				<div className={styles.rightCol}>
 					<Title content={title} size={titleSize} className={styles.title} />
@@ -21,8 +22,10 @@ const Suggestion = ({
 						className={styles.buyButton}
 						size='sm'
 						color='red'
-						children='COMPRAR'
-					/>
+						onClick={onClick}
+					>
+						COMPRAR
+					</Button>
 				</div>
 			</div>
 		</div>
