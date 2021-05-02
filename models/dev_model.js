@@ -9,7 +9,7 @@ const devShema = new mongoose.Schema({
 	linkedin: String,
 	github: String,
 	twitter: String,
-	imagen: String,
+	image: String,
 	discord: String,
 	tags: [
 		{
