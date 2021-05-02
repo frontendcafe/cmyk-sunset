@@ -2,7 +2,7 @@ import React, { createContext } from 'react';
 
 export const ShoppingContext = React.createContext('');
 
-const orderData = {
+const orderDataBase = {
 	userName: null,
 	totalAmount: 0,
 	itemsCount: 0,
@@ -19,7 +19,7 @@ const orderData = {
 	items: [],
 	// 	{
 	// 		id_item: mongoose.Schema.Types.ObjectId,
-	// 		idMarve: String,
+	// 		idMarvel: String,
 	// 		title: String,
 	// 		quantity: Number,
 	// 		price: Number,
@@ -29,7 +29,7 @@ const orderData = {
 };
 
 export const ShoppingProvider = ({ children }) => {
-	const [orderData, setOrderData] = React.useState([]);
+	const [orderData, setOrderData] = React.useState(orderDataBase);
 
 	const setCart = user => {
 		const order = orderData;
@@ -46,20 +46,47 @@ export const ShoppingProvider = ({ children }) => {
 		return cart;
 	};
 
-	const addItemCart = item => {
-
-		console.log(item);
-		return item;
+	const addItemCart = newItem => {
+		const cart = JSON.parse(localStorage.getItem('cart'));
+		const cursor = cart.items.findIndex(item =>
+			item.idMarvel == newItem.idMarvel ? true : false
+		);
+		if (cursor == -1) {
+			cart.items.push(newItem);
+		} else {
+			cart.items[cursor].quantity += newItem.quantity;
+			cart.items[cursor].total = cart.items[cursor].quantity * newItem.price;
+		}
+		localStorage.setItem('cart', JSON.stringify(cart));
+		setOrderData(cart);
+		return cart;
 	};
 
-	const removeItemCart = item => {
-		// localStorage.removeItem('logged');
-		return true;
+	const removeItemCart = idMarvel => {
+		const cart = JSON.parse(localStorage.getItem('cart'));
+		const cursor = cart.items.findIndex(item =>
+			item.idMarvel == idMarvel ? true : false
+		);
+		if (cursor == -1) {
+			throw '404 id not found';
+		} else {
+			cart.items.splice(cursor, 1);
+			localStorage.setItem('cart', JSON.stringify(cart));
+			setOrderData(cart);
+			return true;
+		}
 	};
 
-	const setPayDelivery = order => {
-		// TODO
-
+	const setPayDelivery = payDeli => {
+		const cart = JSON.parse(localStorage.getItem('cart'));
+		cart.payMethod = payDeli.payMethod;
+		cart.payId = payDeli.payMethod;
+		cart.payStatus = payDeli.payMethod;
+		cart.deliveryMethod = payDeli.payMethod;
+		cart.deliveryAdress = payDeli.payMethod;
+		localStorage.setItem('cart', JSON.stringify(cart));
+		setOrderData(cart);
+		
 		return order;
 	};
 
@@ -70,7 +97,6 @@ export const ShoppingProvider = ({ children }) => {
 	return (
 		<ShoppingContext.Provider
 			value={{
-				cart,
 				setCart,
 				getCart,
 				addItemCart,

@@ -18,7 +18,7 @@ const orderShema = new mongoose.Schema({
 	items: [
 		{
 			id_item: mongoose.Schema.Types.ObjectId,
-			idMarve: String,
+			idMarvel: String,
 			title: String,
 			quantity: Number,
 			price: Number,
