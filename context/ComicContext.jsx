@@ -23,8 +23,15 @@ export const ComicProvider = ({ children }) => {
 		fetch('/api/comic')
 			.then(response => response.json())
 			.then(data => {
-				setComics(data);
-				setFilteredComics(data);
+				const comics = data
+				.filter(comic => !!comic.images.length)
+				.map(comic => ({
+					...comic,
+					imageUrl: `${comic.images[0].path}.${comic.images[0].extension}`
+				}));
+
+				setComics(comics);
+				setFilteredComics(comics);
 				setLoading(false);
 			});
 	}, []);
