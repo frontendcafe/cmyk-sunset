@@ -3,16 +3,27 @@ import Title from 'components/atoms/Title';
 import Icon from 'components/atoms/Icon';
 import Input from 'components/atoms/Input';
 import Subtitle from 'components/atoms/Subtitle';
-import LeftIcon from 'components/atoms/LeftIcon/index';
+import LeftIcon from 'components/atoms/LeftIcon';
+import Sidebar from 'components/molecules/Sidebar';
 import Link from 'next/link';
+import { useState } from 'react';
+import { BsX } from 'react-icons/bs';
 
 const Navbar = ({ isLoggedIn = false, purchaseQuantity = 0, onChange }) => {
+	const [sidebarOpen, setSidebarOpen] = useState(false);
+
+	const toggleMenuCollapse = () => {
+		sidebarOpen ? setSidebarOpen(false) : setSidebarOpen(true);
+	};
+
 	let login = null;
 	if (isLoggedIn) {
 		login = (
 			<li className={styles.button}>
 				<Link href='/sign-out'>
-					<Subtitle children={'Sign Out'} />
+					<a>
+						<Subtitle children={'Sign Out'} />
+					</a>
 				</Link>
 			</li>
 		);
@@ -37,21 +48,23 @@ const Navbar = ({ isLoggedIn = false, purchaseQuantity = 0, onChange }) => {
 		);
 	}
 
+	const isActive = sidebarOpen ? styles.active : '';
+
 	return (
 		<div className={styles.navbar}>
-			<LeftIcon dark={true} className={styles.leftIcon} />
+			<Sidebar menuCollapse={sidebarOpen} />
+			<LeftIcon dark className={styles.leftIcon} onClick={toggleMenuCollapse} />
+			<BsX
+				className={`${styles.cross} ${isActive}`}
+				onClick={toggleMenuCollapse}
+			/>
 			<Link href='/'>
 				<a>
-					<Title
-						hasBg={true}
-						dark={true}
-						children={'Marvel Store'}
-						className={styles.title}
-					/>
+					<Title hasBg children={'Marvel Store'} className={styles.title} />
 				</a>
 			</Link>
 			<Input
-				dark={true}
+				dark
 				placeholder={'Search'}
 				className={styles.input}
 				onChange={onChange}
@@ -69,11 +82,7 @@ const Navbar = ({ isLoggedIn = false, purchaseQuantity = 0, onChange }) => {
 				</ul>
 				<Link href='/purchase'>
 					<a>
-						<Icon
-							dark={true}
-							quantity={purchaseQuantity}
-							className={styles.icon}
-						/>
+						<Icon dark quantity={purchaseQuantity} className={styles.icon} />
 					</a>
 				</Link>
 			</div>
