@@ -3,57 +3,137 @@
 @import 'assets/styles/weights.scss';
 
 .login {
-  border: 1px solid green;
+	border: 1px solid green;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	width: 360px;
+	padding-bottom: 5rem;
 
 	.headerLogin {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-top: 5rem;
+		padding-bottom: 5rem;
 
-		title {
-		
+		.title {
+			margin: 0;
+			margin-bottom: 0.3rem;
+			text-transform: none;
 		}
 
 		.titleRed {
-			
+			background-color: $red500;
+			margin: 0;
+			width: 10rem;
+			text-align: center;
 		}
 	}
 
-  .googleAuth {
-    display: flex;
-	flex-direction: column;
-  align-items: center;
+	body {
+		.right {
+			.googleAuth {
+				width: 300px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
 
-    .subtitle {
-      // color: $gray50;
-    }
-  }
-	
+			.subtitleDiv {
+				align-self: flex-start;
+
+				.subtitle {
+					font-size: 18px;
+					align-self: flex-start;
+				}
+			}
+		}
+
+		.left {
+			display: none;
+		}
+	}
 }
 
 @media (min-width: $breakpoint-mobile) {
-	// .login {
-	// 	width: 650px;
-	// 	padding: 0 1rem;
-	// 	padding-bottom: 0.5rem;
+	.login {
+		.headerLogin {
+			.title {
+				font-size: 24px;
+			}
 
-	// 	.buyButton {
-	// 		align-self: center;
-	// 	}
-	// }
+			.titleRed {
+				font-size: 24px;
+			}
+		}
+	}
 }
 
 @media (min-width: $breakpoint-tablet) {
-	// .login {
-	// 	width: 1024px;
-	// 	height: 580px;
-	// 	padding: 0 1rem;
-	// 	padding-bottom: 0.5rem;
+	.login {
+		width: 1440px;
 
-	// 	.buyButton {
-	// 		grid-area: btn;
-	// 		margin-left: 5rem;
-	// 	}
-	// }
+		.headerLogin {
+			padding-top: 3rem;
+			padding-bottom: 3rem;
+
+			.title {
+				font-size: 64px;
+				margin: 0;
+				margin-bottom: 0.3rem;
+			}
+
+			.titleRed {
+				font-size: 64px;
+				background-color: $red500;
+				margin: 0;
+				width: 25rem;
+				text-align: center;
+			}
+		}
+
+		body {
+			width: 100%;
+			display: flex;
+			justify-content: space-evenly;
+			margin: 0;
+
+			.right {
+				width: 49%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.redLine {
+				background-color: $red600;
+				height: 243px;
+				width: 1px;
+			}
+
+			.left {
+				width: 49%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+
+				.portadaMarvel {
+					// width: 500px;
+					// margin: 0 auto;
+
+					// img {
+					// 	height: 180px;
+					// }
+				}
+				.portadaFoto {
+					// width: 500px;
+					// img {
+					// 	object-fit: cover;
+					// 	height: 100px;
+					// }
+				}
+			}
+		}
+	}
 }

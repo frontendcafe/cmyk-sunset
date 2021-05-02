@@ -29,6 +29,10 @@
       width: 12rem;
       align-self: center;
 		}
+    ::placeholder {
+      color: $gray600;
+      opacity: .9;
+    }
 	}
 
 	.loginButton {

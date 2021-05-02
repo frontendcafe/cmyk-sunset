@@ -2,6 +2,7 @@ import styles from './styles.module.scss';
 import Title from 'components/atoms/Title';
 import Subtitle from 'components/atoms/Subtitle';
 import LoginForm from 'components/molecules/LoginForm';
+import Image from 'components/atoms/Image'
 // import AuthGoogleProvider from 'components/atoms/AuthGoogleProvider'
 
 const Login = ({ defaultSize = 'md' }) => {
@@ -9,55 +10,41 @@ const Login = ({ defaultSize = 'md' }) => {
 		<div className={styles.login}>
 			<header className={styles.headerLogin}>
 				<Title
-					content='Bienvenidx a'
+					children='Bienvenidx a'
 					size={defaultSize}
 					className={styles.title}
 				/>
 				<Title
-					content='Marvel Store'
+					children='Marvel Store'
 					size={defaultSize}
 					className={styles.titleRed}
 				/>
 			</header>
-			<LoginForm />
-			<div className={styles.googleAuth}>{/* <AuthGoogleProvider /> */}
-        <Subtitle children='Ingresa con'
-					size={defaultSize}
-					className={styles.subtitle}/>
-      </div>
+			<body>
+				<div className={styles.left}>
+        <div className={styles.portadaMarvel}><Image src='/marvel.svg' alt='Portada-Marvel'  /></div>
+					<div className={styles.portadaFoto}><Image src='/portrait.jpg' alt='Portada-Foto'  /></div>
+          
+				</div>
+
+        <div className={styles.redLine}></div>
+
+				<div className={styles.right}>
+					<LoginForm className={styles.form} />
+					<div className={styles.googleAuth}>
+						{/* <AuthGoogleProvider /> */}
+						<div className={styles.subtitleDiv}>
+							<Subtitle
+								children='Ingresa con'
+								size={defaultSize}
+								className={styles.subtitle}
+							/>
+						</div>
+					</div>
+				</div>
+			</body>
 		</div>
 	);
 };
 
 export default Login;
-
-/*
-<form action='/' className={styles.loginForm}>
-				<div className={styles.inputsForm}>
-					<label htmlFor='email'>Email</label>
-					<br />
-					<Input
-						id='email'
-						placeholder='Email'
-						size='sm'
-						type='text'
-						className={styles.loginInput}
-					/>
-					<label htmlFor='password'>Contraseña</label>
-					<br />
-					<Input
-						id='password'
-						placeholder='Contraseña'
-						size='sm'
-						type='text'
-						className={styles.loginInput}
-					/>
-				</div>
-				<Button
-					className={styles.loginButton}
-					size='md'
-					color='red'
-					children='INGRESAR'
-				/>
-			</form>
-*/
