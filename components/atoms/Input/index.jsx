@@ -7,7 +7,7 @@ const Input = ({
 	placeholder,
 	onChange,
 	dark = false,
-  className
+	className,
 }) => {
 	const cn = dark ? styles.dark : '';
 	return (

@@ -1,0 +1,69 @@
+@import 'assets/styles/colors';
+@import 'assets/styles/sizes.scss';
+
+.navbar {
+	background-color: $gray900;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 20px;
+
+	.title {
+		cursor: pointer;
+	}
+
+	.leftIcon {
+		display: none;
+	}
+
+	.right {
+		display: flex;
+		align-items: center;
+		.icon {
+			margin-left: 40px;
+		}
+	}
+	a {
+		color: inherit;
+		text-decoration: inherit;
+	}
+
+	li {
+		list-style: none;
+	}
+}
+
+.navmenu {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 0;
+
+	.button {
+		margin-left: 40px;
+		cursor: pointer;
+
+		* {
+			color: $gray50;
+		}
+	}
+}
+
+@media (max-width: $breakpoint-xl) {
+	.navbar {
+		.navmenu,
+		.input {
+			display: none;
+		}
+
+		.leftIcon {
+			display: block;
+		}
+
+		.right {
+			.icon {
+				margin-left: 0;
+			}
+		}
+	}
+}
