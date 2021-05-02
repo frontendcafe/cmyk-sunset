@@ -13,7 +13,7 @@ const Navbar = ({
 	isLoggedIn = false,
 	purchaseQuantity = 0,
 	onChange,
-	hasSearch,
+	hasSearch
 }) => {
 	const [sidebarOpen, setSidebarOpen] = useState(false);
 
