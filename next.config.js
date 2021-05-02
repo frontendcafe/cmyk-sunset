@@ -7,6 +7,10 @@ module.exports = {
 		MARVEL_URL: 'https://gateway.marvel.com:443/v1/public/comics',
 	},
 	images: {
-		domains: ['avatars.githubusercontent.com'],
+		domains: [
+			'avatars.githubusercontent.com',
+			'i.annihil.us',
+			'www.definicionabc.com',
+		],
 	},
 };
