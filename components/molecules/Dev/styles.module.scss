@@ -1,0 +1,56 @@
+@import 'assets/styles/colors';
+@import 'assets/styles/sizes';
+
+$socialIconHeight: 60;
+
+.social {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 2em;
+	width: 100%;
+
+	a {
+		opacity: .75;
+		transition: all .2s;
+	
+		&:hover {
+			opacity: 1;
+			transform: scale(.95);
+		}
+	}
+}
+
+.image {
+	border-radius: 50%;
+}
+.title {
+	margin-left: 2rem;
+}
+.title span {
+	background-color: $blue500;
+}
+.container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding: 25px 15px;
+	background-color: $gray700;
+	width: 100%;
+	max-width: 320px;
+}
+
+.code > li {
+	display: inline;
+	margin-left: 0.2rem;
+	margin-right: 0.2rem;
+	padding-left: 0.2rem;
+	padding-right: 0.2rem;
+	background-color: $green500;
+}
+
+:export {
+  socialIconColor: $gray50;
+	socialIconHeight: $socialIconHeight;
+}

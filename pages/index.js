@@ -1,18 +1,18 @@
 import { useContext } from "react";
+
 import { ComicContext } from 'context/ComicContext';
+import Suggestions from "components/organisms/Suggestions/index";
+import ComicCategory from "components/molecules/ComicCategory/index";
+
+import Container from 'components/atoms/Container';
 
 export default function Home() {
-	const { loading, filteredComics, getRecommendation, filterByText } = useContext(ComicContext);
+	const { loading, filteredComics, recommendations } = useContext(ComicContext);
 
-	return (loading ? 'cargando...' :
-		<>
-			<p>tu recomendacion es: {getRecommendation().title}</p>
-			<input onChange={(event) => filterByText(event.target.value)} />
-			<ul>
-				{filteredComics.map((comic, index) => (
-					<li key={index}>{comic.title}</li>
-				))}
-			</ul>
-		</>
+	return (
+		<Container loading={loading} hasSearch>
+			<Suggestions list={recommendations} />
+			<ComicCategory title="Comics" comics={filteredComics} />
+		</Container>
 	);
 }

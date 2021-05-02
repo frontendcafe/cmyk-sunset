@@ -1,0 +1,40 @@
+@import 'assets/styles/colors';
+@import 'assets/styles/sizes.scss';
+
+.sidebar {
+	background-color: $blue900;
+	width: 100%;
+	position: fixed;
+	left: -100%;
+	top: 0;
+	transition: 0.3s;
+	box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+
+	&.active {
+		left: 0;
+	}
+	.items {
+		display: flex;
+		flex-direction: column;
+		padding-left: 40px;
+	}
+
+	.subtitle {
+		color: $gray50;
+	}
+
+	// Reset Default Styles
+	a {
+		color: inherit;
+		text-decoration: inherit;
+	}
+
+	li {
+		list-style: none;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+}

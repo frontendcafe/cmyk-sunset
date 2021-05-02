@@ -1,0 +1,26 @@
+@import 'assets/styles/sizes';
+
+.container {
+  .subtitle {
+    margin: 10px;
+  }
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    list-style: none;
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .container {
+    padding: 30px;
+  }
+}
+
+@media (min-width: $breakpoint-xl) {
+  .container {
+    padding: 10px 50px;
+  }
+}

@@ -17,12 +17,14 @@ const ComicInfo = ({
 }) => {
 	return (
 		<div className={styles.info}>
-			<Title content={title} size={defaultSize} className={styles.title} />
+			<Title size={defaultSize} className={styles.title}>
+				{title}
+			</Title>
 			<Paragraph content={`Calificación: ${rating}`} size={ratingSize} className={styles.rating} />
-			{/* <Image src={src} alt={title}/> */}
-			<div className={`${styles.img}`}></div>
+			<Image src={src} alt={title} className={styles.img}/>
       <Price
-				content={`${currency}${price}`}
+				currency={currency}
+				price={price}
 				className={styles.comicInfoPrice}
 				size={priceSize}
 			/>

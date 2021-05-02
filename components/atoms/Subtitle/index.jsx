@@ -1,8 +1,10 @@
 import styles from './styles.module.scss';
 
-const Subtitle = ({ size, children, className }) => {
+const Subtitle = ({ size, children, className, hasBg }) => {
+	const cn = `${styles.customSubtitle} ${styles[size]} ${hasBg && styles.hasBg} ${className}`;
+
 	return (
-		<p className={`${styles.customSubtitle} ${styles[size]} ${className}`}>{children}</p>
+		<p className={cn}>{children}</p>
 	);
 };
 

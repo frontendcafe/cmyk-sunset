@@ -3,7 +3,6 @@
 @import 'assets/styles/weights.scss';
 
 .info {
-	background-color: $gray800;
 	color: white;
 	display: flex;
 	flex-direction: column;
@@ -17,7 +16,6 @@
 	}
 
 	.img {
-		background-color: $gray500;
 		width: 180px;
 		height: 260px;
 		align-self: center;
@@ -74,12 +72,10 @@
 			'image . header header'
 			'image . rating rating'
 			'image . price .'
-      'image . . .'
-			'image . btn btn';
+			'image . . btn';
 
 		.title {
 			grid-area: header;
-      margin-top: 4rem;
 		}
 
 		.rating {
@@ -87,6 +83,7 @@
 		}
 
 		.img {
+			align-self: flex-start;
 			width: 300px;
 			height: 430px;
 			grid-area: image;

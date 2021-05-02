@@ -20,19 +20,23 @@ const ComicDescription = ({
 				content={`${pages} Páginas`}
 				size={defaultSize}
 			/>
-			<ul>
-				<h4>Creadores</h4>
-				{creators.map((creator, index) => {
-					return (
-						<li key={index}>
-							<Paragraph
-								content={creator}
-								size={defaultSize}
-							/>
-						</li>
-					);
-				})}
-			</ul>
+			{
+				!!creators.length && (
+					<ul>
+						<h4>Creadores</h4>
+						{creators.map((creator, index) => {
+							return (
+								<li key={index}>
+									<Paragraph
+										content={creator}
+										size={defaultSize}
+									/>
+								</li>
+							);
+						})}
+					</ul>
+				)
+			}
 		</div>
 	);
 };
