@@ -29,7 +29,7 @@ const orderData = {
 };
 
 export const ShoppingProvider = ({ children }) => {
-	const [cart, setCart] = React.useState([]);
+	const [orderData, setOrderData] = React.useState([]);
 
 	const setCart = user => {
 		const order = orderData;
@@ -37,16 +37,17 @@ export const ShoppingProvider = ({ children }) => {
 		order.createdAt = Date.now();
 		order.updatedAt = Date.now();
 		localStorage.setItem('cart', JSON.stringify(order));
-		setCart(order);
+		setOrderData(order);
 		return order;
 	};
 
 	const getCart = () => {
-		const order = JSON.parse(localStorage.getItem('cart'));
-		return order;
+		const cart = JSON.parse(localStorage.getItem('cart'));
+		return cart;
 	};
 
 	const addItemCart = item => {
+
 		console.log(item);
 		return item;
 	};
