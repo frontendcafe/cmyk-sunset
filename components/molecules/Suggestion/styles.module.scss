@@ -5,15 +5,15 @@
 .suggestion {
 	display: flex;
 	flex-direction: column;
-	align-items: left;
 	width: 320px;
 
 	.suggestionBox {
-		border: 1px solid $red900;
 		background-color: $gray900;
-    padding: .5rem;
-		display: flex;
+		border: 1px solid $red900;
+		display: grid;
+		grid-template-columns: 160px auto;
 		justify-content: space-between;
+    padding: .5rem;
 		width: 100%;
 
 		.leftCol {
@@ -34,6 +34,8 @@
 
 			.title {
 				font-weight: $bold-weight;
+				height: 120px;
+				overflow: hidden;
 			}
 
 			.buyButton {

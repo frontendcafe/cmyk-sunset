@@ -24,7 +24,9 @@
 	}
 
 	.suggestionsBox {
+		display: flex;
 		flex-wrap: wrap;
+		justify-content: center;
 		margin-top: -0.2rem;
 
 		.hidden {
@@ -51,7 +53,6 @@
 		}
 
 		.suggestionsBox {
-			display: flex;
 			justify-content: space-around;
 			width: 100%;
 
