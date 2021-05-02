@@ -10,9 +10,11 @@ import Container from 'components/atoms/Container';
 export default function Home() {
 	const { loading, filteredComics, recommendations, filterByText } = useContext(ComicContext);
 
+	const handleSearch = (event) => filterByText(event.target.value);
+
 	return (
 		<>
-			<Navbar />
+			<Navbar onChange={handleSearch}/>
 			{
 				loading ? <Loader /> :
 				<Container>
