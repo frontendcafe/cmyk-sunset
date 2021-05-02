@@ -1,8 +1,10 @@
 import styles from './styles.module.scss';
 
-const Paragraph = ({ size = 'md', content = '', className }) => {
+const Paragraph = ({ size = 'md', content = '', className, children }) => {
 	return (
-		<p className={`${styles.defaultParagraph} ${styles[size]} ${className}`}>{content}</p>
+		<p className={`${styles.defaultParagraph} ${styles[size]} ${className}`}>
+			{children || content}
+		</p>
 	);
 };
 

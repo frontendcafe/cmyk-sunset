@@ -2,26 +2,30 @@
 @import 'assets/styles/sizes.scss';
 
 .customSubtitle {
-	.sm {
+	&.sm {
 		font-size: 18px;
 	}
-	.md {
+	&.md {
 		font-size: 24px;
 	}
-	.lg {
+	&.lg {
 		font-size: 38px;
+	}
+	&.hasBg {
+		background-color: $blue700;
+		width: max-content;
 	}
 }
 
 @media (min-width: $breakpoint-mobile) {
 	.customSubtitle {
-		.sm {
+		&.sm {
 			font-size: 24px;
 		}
-		.md {
+		&.md {
 			font-size: 34px;
 		}
-		.lg {
+		&.lg {
 			font-size: 48px;
 		}
 	}
@@ -29,13 +33,13 @@
 
 @media (min-width: $breakpoint-tablet) {
 	.customSubtitle {
-		.sm {
+		&.sm {
 			font-size: 32px;
 		}
-		.md {
+		&.md {
 			font-size: 48px;
 		}
-		.lg {
+		&.lg {
 			font-size: 56px;
 		}
 	}
