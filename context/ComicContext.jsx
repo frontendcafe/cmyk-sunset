@@ -5,8 +5,9 @@ export const ComicContext = createContext('');
 
 export const ComicProvider = ({ children }) => {
 	const [comics, setComics] = useState([]);
-	const [loading, setLoading] = useState(true);
 	const [filteredComics, setFilteredComics] = useState([]);
+	const [loading, setLoading] = useState(true);
+	const [recommendations, setRecommendations] = useState([]);
 
 	const getRecommendation = () => {
 		const recommendation = comics[getRandomInt(0, (comics.length - 1))];
@@ -37,12 +38,20 @@ export const ComicProvider = ({ children }) => {
 			});
 	}, []);
 
+	useEffect(() => {
+		if(comics) setRecommendations([
+			getRecommendation(),
+			getRecommendation(),
+			getRecommendation()
+		])
+	}, [comics])
+
 	return (
 		<ComicContext.Provider
 			value={{
         loading,
         filteredComics,
-        getRecommendation,
+        recommendations,
         filterByText
       }}>
 			{children}
