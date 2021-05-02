@@ -92,7 +92,7 @@ const Navbar = ({
 						</li>
 						{login}
 					</ul>
-					<Link href='/purchase'>
+					<Link href='/checkout'>
 						<a>
 							<Icon dark quantity={purchaseQuantity} className={styles.icon} />
 						</a>
