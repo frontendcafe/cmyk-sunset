@@ -7,6 +7,6 @@ module.exports = {
     MARVEL_URL: "https://gateway.marvel.com:443/v1/public/comics",
   },
   images: {
-    domains: ['i.annihil.us'],
+    domains: ['i.annihil.us', 'www.definicionabc.com'],
   },
 };
