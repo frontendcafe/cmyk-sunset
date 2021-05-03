@@ -2,14 +2,17 @@ import Paragraph from 'components/atoms/Paragraph/index';
 import { FaTwitterSquare, FaLinkedin, FaGithubSquare } from 'react-icons/fa';
 import Image from 'next/image';
 
-import styles, { socialIconColor, socialIconHeight } from './styles.module.scss';
+import styles, {
+	socialIconColor,
+	socialIconHeight,
+} from './styles.module.scss';
 
 const Dev = ({ developer }) => {
 	return (
 		<>
 			<div className={`${styles.container}`}>
-				{
-					developer.image && (
+				<div>
+					{developer.image && (
 						<span className={styles.image}>
 							<Image
 								src={developer.image}
@@ -19,7 +22,8 @@ const Dev = ({ developer }) => {
 							/>
 						</span>
 					)}
-				<div>
+				</div>
+				<div className={`${styles.devName}`}>
 					<h1 className={styles.title}>
 						<span>{developer.nick}</span>
 					</h1>
@@ -39,7 +43,10 @@ const Dev = ({ developer }) => {
 					)}
 					{developer.twitter && (
 						<a href={developer.twitter}>
-							<FaTwitterSquare color={socialIconColor} size={socialIconHeight} />
+							<FaTwitterSquare
+								color={socialIconColor}
+								size={socialIconHeight}
+							/>
 						</a>
 					)}
 					{developer.github && (
