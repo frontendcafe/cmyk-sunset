@@ -8,6 +8,7 @@ import Price from 'components/atoms/Price/index';
 
 
 export default function CartForm({ onSubmitForm }) {
+
     const [values, setValues] = useState(
         {
             name: "", lastName: "", adress: "", numCard: "", dateCard: "", cvv: ""
@@ -34,14 +35,12 @@ export default function CartForm({ onSubmitForm }) {
             <Title
                 size="md"
                 className={`${styles.titleHidden}`}
-                content="Información de compra"
-            />
+            >Información de compra</Title>
             <div className={`${styles.desktop}`}>
                 <Title
                     size="md"
                     className={`${styles.title}`}
-                    content="Datos de contacto"
-                />
+                >Datos de contacto</Title>
                 <div className={`${styles.form}`}>
                     <label>
                         Nombre
@@ -81,8 +80,7 @@ export default function CartForm({ onSubmitForm }) {
                     <Title
                         size="md"
                         className={`${styles.title}`}
-                        content="Datos de la tarjeta"
-                    />
+                    >Datos de la tarjeta</Title>
                     <div className={`${styles.card}`}>
                         <label>
                             Número de la tarjeta
@@ -121,8 +119,10 @@ export default function CartForm({ onSubmitForm }) {
                                 value={values.cvv}
                             />
                         </label>
-                        <Price size="lg"></Price>
-                        <Button size="md" className={`$styles.invalid`} color={"green"}>Finalizar compra</Button>
+                        <div className={`${styles.align}`}>
+                            <Price size="lg" price={""}></Price>
+                            <Button size="md" className={`$styles.invalid`} color={"green"} onClick={""}>Finalizar compra</Button>
+                        </div>
                     </div>
                 </div>
             </div>
