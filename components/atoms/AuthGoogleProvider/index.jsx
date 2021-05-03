@@ -36,8 +36,8 @@ const AuthGoogleProvider = () => {
 		<Button
 			className={`${styles.authProvider}`}
 			onClick={singIn}
-			size='sm'>
-			<AiOutlineGoogle />
+			size='md'>
+			<AiOutlineGoogle className={styles.aiOutline} />
 			Ingresa con google
 		</Button>
 	);

@@ -1,0 +1,68 @@
+@import 'assets/styles/colors.scss';
+@import 'assets/styles/sizes.scss';
+@import 'assets/styles/weights.scss';
+
+.loginForm {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 300px;
+
+	.inputsForm {
+    background-color: $gray700;
+    border: 1px solid $gray900;
+		display: flex;
+		flex-direction: column;
+    align-items: left;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+
+		label {
+			margin-bottom: 0.5rem;
+			margin-top: .5rem;
+      margin-left: 2rem;
+		}
+
+		.loginInput {
+			margin-bottom: 1rem;
+      width: 12rem;
+      align-self: center;
+		}
+    ::placeholder {
+      color: $gray600;
+      opacity: .9;
+    }
+	}
+
+	.loginButton {
+		margin-top: 1.5rem;
+		margin-bottom: 1.5rem;
+	}
+}
+
+@media (min-width: $breakpoint-mobile) {
+	// .login {
+	// 	width: 650px;
+	// 	padding: 0 1rem;
+	// 	padding-bottom: 0.5rem;
+
+	// 	.buyButton {
+	// 		align-self: center;
+	// 	}
+	// }
+}
+
+@media (min-width: $breakpoint-tablet) {
+	// .login {
+	// 	width: 1024px;
+	// 	height: 580px;
+	// 	padding: 0 1rem;
+	// 	padding-bottom: 0.5rem;
+
+	// 	.buyButton {
+	// 		grid-area: btn;
+	// 		margin-left: 5rem;
+	// 	}
+	// }
+}

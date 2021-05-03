@@ -1,5 +1,10 @@
 .authProvider {
-	align-items: center;
 	display: flex;
+  align-items: center;
+  justify-content: center;
 	gap: 20px;
+
+  .aiOutline {
+    margin-right: -.6rem;
+  }
 }
