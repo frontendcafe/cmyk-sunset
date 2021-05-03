@@ -1,0 +1,141 @@
+@import 'assets/styles/colors.scss';
+@import 'assets/styles/sizes.scss';
+@import 'assets/styles/weights.scss';
+
+.login {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 360px;
+
+	.headerLogin {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-top: 5rem;
+		padding-bottom: 5rem;
+
+		.title {
+			margin: 0;
+			margin-bottom: 0.3rem;
+			text-transform: none;
+		}
+
+		.titleRed {
+			background-color: $red500;
+			margin: 0;
+			width: 10rem;
+			text-align: center;
+		}
+	}
+
+	body {
+		.right {
+			.googleAuth {
+				width: 300px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				margin-bottom: 3rem;
+
+				.subtitleDiv {
+					width: 100%;
+					margin-bottom: 0;
+
+					.subtitle {
+						font-size: 18px;
+					}
+				}
+				.googleLogin {
+					margin: 0 auto;
+          width: 300px;
+				}
+			}
+		}
+
+		.left {
+			display: none;
+		}
+	}
+}
+
+@media (min-width: $breakpoint-mobile) {
+	.login {
+		.headerLogin {
+			.title {
+				font-size: 24px;
+			}
+
+			.titleRed {
+				font-size: 24px;
+			}
+		}
+	}
+}
+
+@media (min-width: $breakpoint-tablet) {
+	.login {
+		width: 1440px;
+
+		.headerLogin {
+			padding-top: 3rem;
+			padding-bottom: 3rem;
+
+			.title {
+				font-size: 64px;
+				margin: 0;
+				margin-bottom: 0.3rem;
+			}
+
+			.titleRed {
+				font-size: 64px;
+				background-color: $red500;
+				margin: 0;
+				width: 25rem;
+				text-align: center;
+			}
+		}
+
+		body {
+			width: 100%;
+			display: flex;
+			justify-content: space-evenly;
+
+			.right {
+				margin-top: 2rem;
+				width: 49%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+
+				.googleAuth {
+					.subtitleDiv {
+						margin-bottom: 0;
+					}
+				}
+			}
+
+			.redLine {
+				background-color: $red600;
+				margin-top: 5rem;
+				height: 243px;
+				width: 1px;
+			}
+
+			.left {
+				margin-top: -1rem;
+				width: 49%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+
+				.marvelImg {
+					width: 500px;
+				}
+				.heroesImg {
+					margin-top: -8rem;
+				}
+			}
+		}
+	}
+}
