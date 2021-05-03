@@ -10,13 +10,14 @@ const Dev = ({ developer }) => {
 			<div className={`${styles.container}`}>
 				{
 					developer.image && (
-						<Image
-							className={styles.image}
-							src={developer.image}
-							alt={developer.name + developer.lastname}
-							width={100}
-							height={100}
-						/>
+						<span className={styles.image}>
+							<Image
+								src={developer.image}
+								alt={developer.name + developer.lastname}
+								width={100}
+								height={100}
+							/>
+						</span>
 					)}
 				<div>
 					<h1 className={styles.title}>

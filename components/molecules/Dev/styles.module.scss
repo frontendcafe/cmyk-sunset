@@ -23,7 +23,18 @@ $socialIconHeight: 60;
 }
 
 .image {
-	border-radius: 50%;
+	border-radius: 100%;
+	overflow: hidden;
+
+	img {
+		width: 100%!important;
+		height: auto!important;
+		min-width: unset!important;
+    max-width: unset!important;
+    min-height: unset!important;
+    max-height: unset!important;
+		border-radius: 100%;
+	}
 }
 .title {
 	margin-left: 2rem;
