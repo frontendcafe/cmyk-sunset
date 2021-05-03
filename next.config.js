@@ -11,6 +11,7 @@ module.exports = {
 			'avatars.githubusercontent.com',
 			'i.annihil.us',
 			'www.definicionabc.com',
+			'media-exp1.licdn.com',
 		],
 	},
 };
