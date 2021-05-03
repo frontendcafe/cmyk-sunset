@@ -1,21 +1,11 @@
-import React, { createContext } from 'react';
+import React, { createContext, useEffect } from 'react';
 
-export const DataContext = React.createContext('');
-
-const dataFixed = {
-	name: 'Doctor Strange',
-	lastname: 'Lee',
-	email: 'stanlee@marvel.com',
-	is_logged: false,
-};
+export const DataContext = createContext('');
 
 export const DataProvider = ({ children }) => {
-	const [data, setData] = React.useState(dataFixed);
+	const [data, setData] = React.useState();
 
-	const isLogged = () => {
-		var logged = JSON.parse(localStorage.getItem('logged'));
-		return !!logged;
-	};
+	const isLogged = () => !!data;
 
 	const logIn = logged => {
 		setData(logged);
@@ -26,8 +16,14 @@ export const DataProvider = ({ children }) => {
 	const logOut = () => {
 		setData(null);
 		localStorage.removeItem('logged');
+		window.location.href = '/login';
 		return true;
 	};
+
+	useEffect(() => {
+		const logged = JSON.parse(localStorage.getItem('logged'));
+		setData(logged);
+	}, [])
 
 	return (
 		<DataContext.Provider
