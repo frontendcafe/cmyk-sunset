@@ -8,6 +8,7 @@ const Input = ({
 	onChange,
 	dark = false,
 	className,
+	...rest
 }) => {
 	const cn = dark ? styles.dark : '';
 	return (
@@ -17,6 +18,7 @@ const Input = ({
 			placeholder={placeholder}
 			onChange={onChange}
 			disabled={isDisabled}
+			{...rest}
 		/>
 	);
 };
