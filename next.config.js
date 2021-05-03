@@ -13,6 +13,7 @@ module.exports = {
 			'www.definicionabc.com',
 			'media-exp1.licdn.com',
 			'media.discordapp.net',
+			'cdn.discordapp.com'
 		],
 	},
 };
