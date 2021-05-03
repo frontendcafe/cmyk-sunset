@@ -12,6 +12,7 @@ module.exports = {
 			'i.annihil.us',
 			'www.definicionabc.com',
 			'media-exp1.licdn.com',
+			'media.discordapp.net',
 		],
 	},
 };
