@@ -1,26 +1,28 @@
 @import 'assets/styles/sizes';
 
 .container {
-  .subtitle {
-    margin: 10px;
-  }
+	.subtitle {
+		margin: 10px;
+	}
 
-  .list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    list-style: none;
-  }
+	.list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 40px;
+		list-style: none;
+		padding-inline-start: 0;
+    justify-content: center;
+	}
 }
 
 @media (min-width: $breakpoint-tablet) {
-  .container {
-    padding: 30px;
-  }
+	.container {
+		padding: 30px;
+	}
 }
 
 @media (min-width: $breakpoint-xl) {
-  .container {
-    padding: 10px 50px;
-  }
+	.container {
+		padding: 10px 50px;
+	}
 }
