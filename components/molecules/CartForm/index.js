@@ -1,13 +1,14 @@
 import styles from './styles.module.scss';
-import React, { useState } from "react";
-
+import React, { useState, useContext } from "react";
+import { ShoppingContext } from 'context/ShoppingContext';
 import Input from 'components/atoms/Input/index'
 import Title from 'components/atoms/Title/index';
 import Button from 'components/atoms/Button/index';
 import Price from 'components/atoms/Price/index';
 
 
-export default function CartForm({ onSubmitForm }) {
+export default function CartForm({ price, onSubmitForm }) {
+    const { setPayDelivery, checkout } = useContext(ShoppingContext);
 
     const [values, setValues] = useState(
         {
@@ -31,7 +32,8 @@ export default function CartForm({ onSubmitForm }) {
         }
     }
     return (
-        <form className={`${styles.container}`} onSubmit={onSubmit}>
+
+        <form className={`${styles.container}`} onSubmit={onSubmit} action={checkout} method='post'>
             <Title
                 size="md"
                 className={`${styles.titleHidden}`}
@@ -120,8 +122,8 @@ export default function CartForm({ onSubmitForm }) {
                             />
                         </label>
                         <div className={`${styles.align}`}>
-                            <Price size="lg" price={""}></Price>
-                            <Button size="md" className={`$styles.invalid`} color={"green"} onClick={""}>Finalizar compra</Button>
+                            <Price size="lg" price={price} currency="$"></Price>
+                            <Button size="md" className={`$styles.invalid`} color={"green"} onClick={setPayDelivery}>Finalizar compra</Button>
                         </div>
                     </div>
                 </div>
