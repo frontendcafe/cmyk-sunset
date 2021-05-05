@@ -4,18 +4,19 @@ import ComicDescription from 'components/molecules/ComicDescription';
 
 const ComicDetail = ({
 	infoSize = 'md',
-	infoTitle = 'X-Men Legends #2',
-	rating = '4/10',
+	infoTitle = '',
+	rating = '',
 	ratingSize = 'md',
 	src = '',
 	currency = '$',
-	price = '500',
+	price = '',
 	priceSize = 'lg',
 	descrSize = 'sm',
 	descrTitle = 'Información del comic',
-	content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet, leo ut hendrerit consectetur, elit elit posuere orci, ac feugiat libero nisi eu eros. Quisque scelerisque tortor orci, id dapibus ligula ultrices a. Aenean rhoncus risus nec sapien placerat, id rhoncus magna suscipit.',
-	pages = '152',
-	creators = ['Lorem Ipsum', 'Lorem Ipsum', 'Lorem Ipsum'],
+	content = '',
+	pages = '',
+	creators = [],
+  comic
 }) => {
 	return (
 		<div className={styles.comicDetail}>
@@ -29,6 +30,7 @@ const ComicDetail = ({
 				currency={currency}
 				price={price}
 				size={priceSize}
+        comic={comic}
 			/>
 			<ComicDescription
 				className={styles.comicDescr}

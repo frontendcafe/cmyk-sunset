@@ -33,6 +33,7 @@ export default function Comic() {
         content={comic?.description}
         pages={comic?.pageCount || getRandomInt(100, 200)}
         creators={comic?.creators?.items.map(({ name }) => name)}
+        comic={comic}
       />
     </Container>
   );

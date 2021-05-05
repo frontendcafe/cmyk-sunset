@@ -13,8 +13,14 @@ const ComicInfo = ({
 	src = '',
 	currency = '$',
 	price = '500',
-  priceSize = 'lg'
+  priceSize = 'lg',
+  comic
 }) => {
+
+  const handleClick = () => {
+    console.log(comic)
+  }
+
 	return (
 		<div className={styles.info}>
 			<Title size={defaultSize} className={styles.title}>
@@ -33,6 +39,7 @@ const ComicInfo = ({
 					size='md'
 					color='green'
 					children='AGREGAR AL CARRITO'
+          onClick={handleClick}
 				/>
 		</div>
 	);
