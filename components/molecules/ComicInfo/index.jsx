@@ -1,11 +1,16 @@
-import styles from './styles.module.scss';
+import { useContext } from 'react';
+
 import Title from 'components/atoms/Title';
 import Paragraph from 'components/atoms/Paragraph';
 import Image from 'components/atoms/Image';
 import Price from 'components/atoms/Price';
-import Button from 'components/atoms/Button'
+import Button from 'components/atoms/Button';
+import { ShoppingContext } from 'context/ShoppingContext';
+
+import styles from './styles.module.scss';
 
 const ComicInfo = ({
+	id,
   defaultSize = 'md',
 	title = 'X-Men Legends #2',
 	rating = '4/10',
@@ -13,8 +18,18 @@ const ComicInfo = ({
 	src = '',
 	currency = '$',
 	price = '500',
-  priceSize = 'lg'
+  priceSize = 'lg',
 }) => {
+	const { addItemCart } = useContext(ShoppingContext);
+
+	const handleAddItem = () => addItemCart({
+		total: price,
+		imageUrl: src,
+		title,
+		price,
+		idMarvel: id
+	})
+
 	return (
 		<div className={styles.info}>
 			<Title size={defaultSize} className={styles.title}>
@@ -32,6 +47,7 @@ const ComicInfo = ({
 					className={styles.buyButton}
 					size='md'
 					color='green'
+					onClick={handleAddItem}
 					children='AGREGAR AL CARRITO'
 				/>
 		</div>

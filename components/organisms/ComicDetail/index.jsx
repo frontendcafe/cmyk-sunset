@@ -3,6 +3,7 @@ import ComicInfo from 'components/molecules/ComicInfo';
 import ComicDescription from 'components/molecules/ComicDescription';
 
 const ComicDetail = ({
+	id,
 	infoSize = 'md',
 	infoTitle = 'X-Men Legends #2',
 	rating = '4/10',
@@ -20,6 +21,7 @@ const ComicDetail = ({
 	return (
 		<div className={styles.comicDetail}>
 			<ComicInfo
+				id={id}
 				className={styles.comicInfo}
 				size={infoSize}
 				title={infoTitle}

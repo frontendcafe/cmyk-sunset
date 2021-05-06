@@ -25,6 +25,7 @@ export default function Comic() {
   return (
     <Container loading={loading}>
       <ComicDetail
+        id={id}
         infoTitle={comic?.title}
         rating={`${getRandomInt(0, 10)}/10`}
         src={comic?.imageUrl}

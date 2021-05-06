@@ -26,52 +26,50 @@ export const ShoppingProvider = ({ children }) => {
 
 	const setCart = user => {
 		if (user) {
-			const order = orderData;
+			const order = orderData || {};
+
+			order.items = [];
 			order.userName = user.name;
 			order.createdAt = Date.now();
 			order.updatedAt = Date.now();
+
 			localStorage.setItem('cart', JSON.stringify(order));
 			setOrderData(order);
-			return order;
 		}
 	};
 
-	const getCart = () => {
-		const cart = JSON.parse(localStorage.getItem('cart'));
-		return cart;
-	};
+	const getCart = () => JSON.parse(localStorage.getItem('cart'));
 
 	const itemsCount = () => orderData?.items?.length || 0;
 
-	const totalItemCart = () => {
-		let total = 0;
-		console.log(orderData.items);
-		orderData.items.map(item => {
-			total += item.total;
-		});
-		return total;
-	};
+	const totalItemCart = cart =>
+		(cart || orderData).items.reduce((a, b) => a + b.total, 0);
 
 	const addItemCart = newItem => {
 		const cart = JSON.parse(localStorage.getItem('cart'));
-		const cursor = cart.items.findIndex(item =>
-			item.idMarvel == newItem.idMarvel ? true : false
-		);
-		if (cursor == -1) {
-			cart.items.push(newItem);
+		const cursor =
+			cart.items?.findIndex(({ idMarvel }) => idMarvel === newItem.idMarvel) ??
+			-1;
+
+		if (cursor >= 0) {
+			cart.items[cursor].quantity += newItem.quantity || 1;
+			cart.items[cursor].total =
+				cart.items[cursor].quantity || 1 * newItem.price;
 		} else {
-			cart.items[cursor].quantity += newItem.quantity;
-			cart.items[cursor].total = cart.items[cursor].quantity * newItem.price;
+			cart.items.push(newItem);
 		}
+
 		cart.totalAmount = totalItemCart(cart);
+
 		localStorage.setItem('cart', JSON.stringify(cart));
 		setOrderData(cart);
+
 		return cart;
 	};
 
 	const removeItemCart = idMarvel => {
 		const cart = JSON.parse(localStorage.getItem('cart'));
-		const cursor = cart.items.findIndex(item =>
+		const cursor = cart.items?.findIndex(item =>
 			item.idMarvel == idMarvel ? true : false
 		);
 		if (cursor == -1) {
