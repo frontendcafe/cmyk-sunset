@@ -30,7 +30,7 @@ const Cart = () => {
 								content='Total: '
 								className={`${styles.paragraph}`}
 							/>
-							<Price size='lg' price={totalItemCart?.() || 0} currency='$' />
+							<Price size='lg' price={orderData.totalAmount} currency='$' />
 						</div>
 						<Button size='md' color={'green'}>
 							CONTINUAR COMPRA

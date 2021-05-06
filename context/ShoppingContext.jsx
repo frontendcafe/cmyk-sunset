@@ -128,7 +128,7 @@ export const ShoppingProvider = ({ children }) => {
 				itemsCount,
 				removeItemCart,
 				setPayDelivery,
-				checkout,
+				checkout
 			}}>
 			{children}
 		</ShoppingContext.Provider>
