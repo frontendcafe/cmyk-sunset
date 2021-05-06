@@ -1,4 +1,5 @@
-import React, { createContext } from 'react';
+import React, { createContext, useContext, useEffect } from 'react';
+import { DataContext } from './DataContext';
 
 export const ShoppingContext = React.createContext('');
 
@@ -21,15 +22,18 @@ const orderDataBase = {
 
 export const ShoppingProvider = ({ children }) => {
 	const [orderData, setOrderData] = React.useState(orderDataBase);
+	const { data } = useContext(DataContext);
 
 	const setCart = user => {
-		const order = orderData;
-		order.userName = user.userName;
-		order.createdAt = Date.now();
-		order.updatedAt = Date.now();
-		localStorage.setItem('cart', JSON.stringify(order));
-		setOrderData(order);
-		return order;
+		if (user) {
+			const order = orderData;
+			order.userName = user.name;
+			order.createdAt = Date.now();
+			order.updatedAt = Date.now();
+			localStorage.setItem('cart', JSON.stringify(order));
+			setOrderData(order);
+			return order;
+		}
 	};
 
 	const getCart = () => {
@@ -37,9 +41,12 @@ export const ShoppingProvider = ({ children }) => {
 		return cart;
 	};
 
-	const totalItemCart = cart => {
+	const itemsCount = () => orderData?.items?.length || 0;
+
+	const totalItemCart = () => {
 		let total = 0;
-		cart.items.map(item => {
+		console.log(orderData.items);
+		orderData.items.map(item => {
 			total += item.total;
 		});
 		return total;
@@ -106,12 +113,21 @@ export const ShoppingProvider = ({ children }) => {
 		return resData;
 	};
 
+	useEffect(() => {
+		if (!getCart() && data) setCart(data);
+	}, [data]);
+
+	useEffect(() => {
+		setOrderData(getCart());
+	}, []);
+
 	return (
 		<ShoppingContext.Provider
 			value={{
 				setCart,
-				getCart,
+				orderData,
 				addItemCart,
+				itemsCount,
 				removeItemCart,
 				setPayDelivery,
 				checkout,

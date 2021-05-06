@@ -9,6 +9,7 @@
     flex-direction: row; 
     padding: 25px 15px;
     background-color: $gray700;
+    margin-bottom: 10px;
 }
 .detail{
     display: flex;
@@ -74,8 +75,8 @@
 .total{
     display: flex;
     flex-direction: column;
-    align-items: center;
     align-self: flex-end;
+    align-items: flex-end;
 }
 .margin{
     margin: 0px
