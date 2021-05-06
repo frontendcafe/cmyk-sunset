@@ -13,14 +13,14 @@ const Dev = ({ developer }) => {
 			<div className={`${styles.container}`}>
 				<div>
 					{developer.image && (
-						<span className={styles.image}>
+						<div className={styles.image}>
 							<Image
 								src={developer.image}
 								alt={developer.name + developer.lastname}
 								width={100}
 								height={100}
 							/>
-						</span>
+						</div>
 					)}
 				</div>
 				<div className={`${styles.devName}`}>
