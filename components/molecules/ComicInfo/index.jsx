@@ -27,7 +27,8 @@ const ComicInfo = ({
 		imageUrl: src,
 		title,
 		price,
-		idMarvel: id
+		idMarvel: id,
+		quantity: 1
 	})
 
 	return (

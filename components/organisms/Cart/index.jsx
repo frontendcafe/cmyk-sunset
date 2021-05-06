@@ -20,14 +20,14 @@ const Cart = () => {
 			</Subtitle>
 			{!!itemsCount() ? (
 				<div className={`${styles.box}`}>
-					{orderData.items.map(({id, imageUrl, title, count, total}) => (
-						<ItemCart imageUrl={imageUrl} title={title} count={count} total={total} key={id} />
+					{orderData.items.map(({id, imageUrl, title, quantity, total}) => (
+						<ItemCart imageUrl={imageUrl} title={title} quantity={quantity} total={total} key={id} />
 					))}
 					<div className={`${styles.buyItems}`}>
 						<div className={`${styles.price}`}>
 							<Paragraph
 								size='sm'
-								content='Total: '
+								content='Total'
 								className={`${styles.paragraph}`}
 							/>
 							<Price size='lg' price={orderData.totalAmount} currency='$' />

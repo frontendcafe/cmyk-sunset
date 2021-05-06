@@ -1,94 +1,101 @@
-@import "assets/styles/colors.scss";
+@import 'assets/styles/colors.scss';
 @import 'assets/styles/sizes.scss';
 
-.border{
-    border: 2px solid white
+.border {
+	border: 2px solid white;
 }
-.container{
-    display:flex;
-    flex-direction: row; 
-    padding: 25px 15px;
-    background-color: $gray700;
-    margin-bottom: 10px;
+.container {
+	display: flex;
+	flex-direction: row;
+	padding: 25px 15px;
+	background-color: $gray700;
+	margin-bottom: 10px;
 }
-.detail{
-    display: flex;
-    flex-direction: column;
-    margin-left: 21px;
+.detail {
+	display: grid;
+	flex-direction: column;
+	margin-left: 21px;
 }
-.title{
-    margin: 0px;
+.title {
+	margin: 0px;
 }
-.counterTotal{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
+.image {
+	width: 70px;
 }
-.counter{
-    display:flex;
-    flex-direction: row;
-    align-items: center; 
+.counter {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 }
-.padding{
-    padding: 8px;
+.padding {
+	padding: 8px;
 }
-.btncounter{
-    border: 1px solid;
-    border-radius: 100%;
-    margin: 0px;
-    height: fit-content;
-    color: $gray50;
-    cursor: pointer;
-    text-align: center;
-    &:disabled {
-        background-color: $gray200;
-        color: $gray50;
-        border-color: $gray200;
-        cursor: not-allowed;
-        }
-    &:disabled:hover {
-        background-color: $gray200;
-        border-color: $gray200;
-        box-shadow: none;
-    }
+.btncounter {
+	border: 1px solid;
+	border-radius: 100%;
+	margin: 0px;
+	height: fit-content;
+	color: $gray50;
+	cursor: pointer;
+	text-align: center;
+	&:disabled {
+		background-color: $gray200;
+		color: $gray50;
+		border-color: $gray200;
+		cursor: not-allowed;
+	}
+	&:disabled:hover {
+		background-color: $gray200;
+		border-color: $gray200;
+		box-shadow: none;
+	}
 }
-.red{
-    background-color: $red600;
-    border-color: $red600;
-    padding: 1px 8px;
-    &:hover{
-        background-color: $red400;
-        box-shadow: 0px 0px 10px $red400;
-        border-color: $red400;
-    }
+.red {
+	background-color: $red600;
+	border-color: $red600;
+	padding: 1px 8px;
+	&:hover {
+		background-color: $red400;
+		box-shadow: 0px 0px 10px $red400;
+		border-color: $red400;
+	}
 }
-.green{
-    background-color: $green600;
-    border-color: $green600;
-    padding: 0px 6px;
-    &:hover{
-        background-color: $green400;
-        box-shadow: 0px 0px 10px $green400;
-        border-color: $green400;
-    }
+.green {
+	background-color: $green600;
+	border-color: $green600;
+	padding: 0px 6px;
+	&:hover {
+		background-color: $green400;
+		box-shadow: 0px 0px 10px $green400;
+		border-color: $green400;
+	}
 }
-.total{
-    display: flex;
-    flex-direction: column;
-    align-self: flex-end;
-    align-items: flex-end;
+.total {
+	display: flex;
+	flex-direction: column;
+	align-self: flex-end;
+	align-items: flex-end;
 }
-.margin{
-    margin: 0px
+.margin {
+	margin: 0px;
 }
 
 @media (min-width: $breakpoint-mobile) {
-    .detail{
-        width: 100vh;
-    }
-  }
+	.detail {
+		width: 100vh;
+	}
+	.image {
+		width: 100px;
+	}
+}
 @media (min-width: $breakpoint-tablet) {
-    .detail{
-        width: 100vh;    
-    }
+	.container {
+		gap: 30px;
+		.detail {
+			width: 100vh;
+		}
+		.image {
+			width: auto;
+		}
+	}
 }
