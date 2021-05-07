@@ -17,6 +17,11 @@ const Login = ({ defaultSize = 'md' }) => {
 		if (isLogged()) router.push('/');
 	}, []);
 
+	const handleSuccess = () => {
+		const path = router.query.redirectTo ?? '/';
+		router.push(path);
+	}
+
 	return (
 		<div className={styles.login}>
 			<header className={styles.headerLogin}>
@@ -47,7 +52,7 @@ const Login = ({ defaultSize = 'md' }) => {
 				<div className={styles.redLine}></div>
 
 				<div className={styles.right}>
-					<LoginForm className={styles.form} />
+					<LoginForm className={styles.form} onSuccess={handleSuccess} />
 					<div className={styles.googleAuth}>
 						<div className={styles.subtitleDiv}>
 							<Subtitle
@@ -56,7 +61,7 @@ const Login = ({ defaultSize = 'md' }) => {
 								className={styles.subtitle}
 							/>
 						</div>
-						<AuthGoogleProvider className={styles.googleLogin} />
+						<AuthGoogleProvider className={styles.googleLogin} onSuccess={handleSuccess} />
 					</div>
 				</div>
 			</main>

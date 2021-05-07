@@ -5,7 +5,7 @@ import Button from 'components/atoms/Button';
 import Input from 'components/atoms/Input';
 import { DataContext } from 'context/DataContext';
 
-const LoginForm = () => {
+const LoginForm = ({onSuccess}) => {
 	const [data, setData] = useState({});
 	const { logIn } = useContext(DataContext);
 
@@ -17,7 +17,7 @@ const LoginForm = () => {
 
 		const user = { ...data, name: data.email.split('@')[0] };
 		logIn(user);
-		window.location.href = '/';
+		onSuccess();
 	};
 
 	return (

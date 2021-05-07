@@ -10,7 +10,7 @@ import Button from '../Button';
 
 import styles from './styles.module.scss';
 
-const AuthGoogleProvider = () => {
+const AuthGoogleProvider = ({onSuccess}) => {
 	const { logIn } = useContext(DataContext);
 
 	const singIn = () => {
@@ -25,6 +25,7 @@ const AuthGoogleProvider = () => {
 			.then(result => {
 				const { photoURL: img, email, displayName: name } = result.user;
 				logIn({ img, email, name });
+				onSuccess();
 			})
 			.catch(error => {
 				var errorCode = error.code;
