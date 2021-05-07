@@ -1,6 +1,5 @@
 import styles from './styles.module.scss';
-import React, { useState, useContext } from "react";
-import { ShoppingContext } from 'context/ShoppingContext';
+import React, { useState } from "react";
 import Input from 'components/atoms/Input/index'
 import Title from 'components/atoms/Title/index';
 import Button from 'components/atoms/Button/index';
@@ -8,8 +7,6 @@ import Price from 'components/atoms/Price/index';
 
 
 export default function CartForm({ price, onSubmitForm }) {
-    const { setPayDelivery, checkout } = useContext(ShoppingContext);
-
     const [values, setValues] = useState(
         {
             name: "", lastName: "", adress: "", numCard: "", dateCard: "", cvv: ""
@@ -33,7 +30,7 @@ export default function CartForm({ price, onSubmitForm }) {
     }
     return (
 
-        <form className={`${styles.container}`} onSubmit={onSubmit} action={checkout} method='post'>
+        <form className={`${styles.container}`} onSubmit={onSubmit}>
             <Title
                 size="md"
                 className={`${styles.titleHidden}`}
@@ -95,6 +92,7 @@ export default function CartForm({ price, onSubmitForm }) {
                                 pattern={"[-+]?[0-9]"}
                                 onChange={set("numCard")}
                                 value={values.numCard}
+                                required
                             />
                         </label>
                         <label>
@@ -106,6 +104,7 @@ export default function CartForm({ price, onSubmitForm }) {
                                 placeholder="Ej: 04/12/2040"
                                 onChange={set("dateCard")}
                                 value={values.dateCard}
+                                required
                             />
                         </label>
                         <label>
@@ -119,11 +118,12 @@ export default function CartForm({ price, onSubmitForm }) {
                                 pattern={"[-+]?[0-9]"}
                                 onChange={set("cvv")}
                                 value={values.cvv}
+                                required
                             />
                         </label>
                         <div className={`${styles.align}`}>
                             <Price size="lg" price={price} currency="$"></Price>
-                            <Button size="md" className={`$styles.invalid`} color={"green"} onClick={setPayDelivery}>Finalizar compra</Button>
+                            <Button size="md" className={`$styles.invalid`} color={"green"} type="submit">Finalizar compra</Button>
                         </div>
                     </div>
                 </div>
