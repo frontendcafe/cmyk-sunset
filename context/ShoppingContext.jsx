@@ -70,7 +70,7 @@ export const ShoppingProvider = ({ children }) => {
 		return cart;
 	};
 
-	const removeItemCart = idMarvel => {
+	const removeItemCart = (idMarvel, quantity = 1) => {
 		const cart = JSON.parse(localStorage.getItem('cart'));
 		const cursor = cart.items?.findIndex(item =>
 			item.idMarvel == idMarvel ? true : false
@@ -78,11 +78,16 @@ export const ShoppingProvider = ({ children }) => {
 		if (cursor == -1) {
 			throw '404 id not found';
 		} else {
-			cart.items.splice(cursor, 1);
-			cart.totalAmount = totalItemCart(cart);
+			if(cart.items[cursor].quantity > 1) {
+				const {total: actualTotal, quantity: actualQuantity} = cart.items[cursor];
 
+				cart.items[cursor].total = (actualTotal / actualQuantity) * (actualQuantity - quantity);
+				cart.items[cursor].quantity = actualQuantity - quantity;
+			}
+			else cart.items.splice(cursor, 1);
+
+			cart.totalAmount = totalItemCart(cart);
 			setOrderData(cart);
-			return true;
 		}
 	};
 
