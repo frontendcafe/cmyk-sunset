@@ -21,22 +21,26 @@ const orderDataBase = {
 };
 
 export const ShoppingProvider = ({ children }) => {
-	const [orderData, setOrderData] = React.useState(orderDataBase);
+	const [orderData, setOrderData] = React.useState(null);
 	const { data } = useContext(DataContext);
 
 	const setCart = user => {
-		if (user) {
-			const order = orderData || {};
+		const order = orderData || orderDataBase;
 
-			order.items = [];
-			order.userName = user.name;
-			order.createdAt = Date.now();
-			order.updatedAt = Date.now();
+		order.items = [];
+		order.userName = user?.name;
+		order.createdAt = Date.now();
+		order.updatedAt = Date.now();
 
-			localStorage.setItem('cart', JSON.stringify(order));
-			setOrderData(order);
-		}
+		setOrderData(order);
 	};
+
+	const setUser = (user) => {
+		setOrderData(data => ({
+			...data,
+			userName: user
+		}));
+	}
 
 	const getCart = () => JSON.parse(localStorage.getItem('cart'));
 
@@ -60,8 +64,6 @@ export const ShoppingProvider = ({ children }) => {
 		}
 
 		cart.totalAmount = totalItemCart(cart);
-
-		localStorage.setItem('cart', JSON.stringify(cart));
 		setOrderData(cart);
 
 		return cart;
@@ -77,7 +79,7 @@ export const ShoppingProvider = ({ children }) => {
 		} else {
 			cart.items.splice(cursor, 1);
 			cart.totalAmount = totalItemCart(cart);
-			localStorage.setItem('cart', JSON.stringify(cart));
+
 			setOrderData(cart);
 			return true;
 		}
@@ -90,7 +92,7 @@ export const ShoppingProvider = ({ children }) => {
 		cart.payStatus = payDeli.payMethod;
 		cart.deliveryMethod = payDeli.payMethod;
 		cart.deliveryAdress = payDeli.payMethod;
-		localStorage.setItem('cart', JSON.stringify(cart));
+
 		setOrderData(cart);
 
 		return order;
@@ -112,12 +114,17 @@ export const ShoppingProvider = ({ children }) => {
 	};
 
 	useEffect(() => {
-		if (!getCart() && data) setCart(data);
+		if (data) setUser(data);
 	}, [data]);
 
 	useEffect(() => {
-		setOrderData(getCart());
+		if(!getCart()) setCart();
 	}, []);
+
+	useEffect(()=> {
+		console.log(orderData)
+		if(orderData) localStorage.setItem('cart', JSON.stringify(orderData));
+	}, [orderData]);
 
 	return (
 		<ShoppingContext.Provider
@@ -128,7 +135,7 @@ export const ShoppingProvider = ({ children }) => {
 				itemsCount,
 				removeItemCart,
 				setPayDelivery,
-				checkout
+				checkout,
 			}}>
 			{children}
 		</ShoppingContext.Provider>
