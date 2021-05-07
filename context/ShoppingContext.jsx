@@ -122,7 +122,6 @@ export const ShoppingProvider = ({ children }) => {
 	}, []);
 
 	useEffect(()=> {
-		console.log(orderData)
 		if(orderData) localStorage.setItem('cart', JSON.stringify(orderData));
 	}, [orderData]);
 

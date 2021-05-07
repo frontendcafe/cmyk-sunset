@@ -12,7 +12,6 @@ import styles from './styles.module.scss';
 const Cart = () => {
 	const { orderData, itemsCount, totalItemCart } = useContext(ShoppingContext);
 
-	console.log(orderData);
 	return (
 		<div className={`${styles.container}`}>
 			<Subtitle size='lg' hasBg>
