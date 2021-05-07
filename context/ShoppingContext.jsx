@@ -35,19 +35,20 @@ export const ShoppingProvider = ({ children }) => {
 		setOrderData(order);
 	};
 
-	const setUser = (user) => {
+	const setUser = user => {
 		setOrderData(data => ({
 			...data,
-			userName: user
+			userName: user,
 		}));
-	}
+	};
 
 	const getCart = () => JSON.parse(localStorage.getItem('cart'));
 
-	const itemsCount = () => orderData?.items?.length || 0;
+	const itemsCount = () =>
+		orderData?.items?.reduce((a, b) => a + b.quantity, 0) || 0;
 
 	const totalItemCart = cart =>
-		(cart || orderData).items.reduce((a, b) => a + b.total, 0);
+		(cart || orderData)?.items?.reduce((a, b) => a + b.total, 0) || 0;
 
 	const addItemCart = newItem => {
 		const cart = JSON.parse(localStorage.getItem('cart'));
@@ -118,11 +119,11 @@ export const ShoppingProvider = ({ children }) => {
 	}, [data]);
 
 	useEffect(() => {
-		if(!getCart()) setCart();
+		if (!getCart()) setCart();
 	}, []);
 
-	useEffect(()=> {
-		if(orderData) localStorage.setItem('cart', JSON.stringify(orderData));
+	useEffect(() => {
+		if (orderData) localStorage.setItem('cart', JSON.stringify(orderData));
 	}, [orderData]);
 
 	return (

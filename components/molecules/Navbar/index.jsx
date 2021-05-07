@@ -9,12 +9,14 @@ import Subtitle from 'components/atoms/Subtitle';
 import LeftIcon from 'components/atoms/LeftIcon';
 import Sidebar from 'components/molecules/Sidebar';
 import { DataContext } from 'context/DataContext';
+import { ShoppingContext } from 'context/ShoppingContext';
 
 import styles from './styles.module.scss';
 
-const Navbar = ({ purchaseQuantity = 0, onChange, hasSearch }) => {
+const Navbar = ({ onChange, hasSearch }) => {
 	const [sidebarOpen, setSidebarOpen] = useState(false);
 	const { isLogged, logOut } = useContext(DataContext);
+	const { itemsCount } = useContext(ShoppingContext);
 
 	const toggleMenuCollapse = () => {
 		sidebarOpen ? setSidebarOpen(false) : setSidebarOpen(true);
@@ -80,7 +82,7 @@ const Navbar = ({ purchaseQuantity = 0, onChange, hasSearch }) => {
 					</ul>
 					<Link href='/checkout'>
 						<a>
-							<Icon dark quantity={purchaseQuantity} className={styles.icon} />
+							<Icon dark quantity={itemsCount()} className={styles.icon} hasCounter/>
 						</a>
 					</Link>
 				</div>
