@@ -12,6 +12,8 @@ import styles from './styles.module.scss';
 const Cart = () => {
 	const { orderData, itemsCount } = useContext(ShoppingContext);
 
+	const handleContinue = () => window.location.href = '/payment';
+
 	return (
 		<div className={`${styles.container}`}>
 			<Subtitle size='lg' hasBg>
@@ -41,7 +43,7 @@ const Cart = () => {
 							/>
 							<Price size='lg' price={orderData.totalAmount} currency='$' />
 						</div>
-						<Button size='md' color={'green'}>
+						<Button size='md' color={'green'} onClick={handleContinue}>
 							CONTINUAR COMPRA
 						</Button>
 					</div>

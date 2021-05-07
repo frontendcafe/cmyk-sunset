@@ -1,91 +1,95 @@
 @import 'assets/styles/colors';
 @import 'assets/styles/sizes.scss';
 
-.container{
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 20px;
+    margin: auto;
+    max-width: 1024px;
 }
-.title{
-    background-color: $blue700;
-    width: max-content;
-    padding: 0px 5px;
-    align-self: flex-start;
+.title {
+	background-color: $blue700;
+	width: max-content;
+	padding: 0px 5px;
+	align-self: flex-start;
 }
-.titleHidden{
-    width: 0px;
-    height: 0px;
-    margin: 0px;
-    padding: 0px;
-    visibility: hidden;
+.titleHidden {
+	width: 0px;
+	height: 0px;
+	margin: 0px;
+	padding: 0px;
+	visibility: hidden;
 }
-.form{
-    width: max-content;
-    label{
-        display:flex;
-        flex-direction: column;
-        margin: 25px 0px;
-    }
+.form {
+	width: max-content;
+	label {
+		display: flex;
+		flex-direction: column;
+		margin: 25px 0px;
+	}
 }
-.align{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+.align {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+    gap: 30px;
 }
-.space{
-    margin-top: 68px;
-    label{
-        display:flex;
-        flex-direction: column;
-        margin: 25px 0px;
-    }
+.space {
+	margin-top: 68px;
+	label {
+		display: flex;
+		flex-direction: column;
+		margin: 25px 0px;
+	}
 }
 
 @media (min-width: $breakpoint-mobile) {
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .desktop{
-        display:flex;
-        flex-direction: row;
-        justify-content: center;
-    }
-    .title{
-        width: 0px;
-        height: 0px;
-        margin: 0px;
-        padding: 0px;
-        visibility: hidden;
-    }
-    .titleHidden{
-        width: auto;
-        height: auto;
-        background-color: $blue700;
-        padding: 0px 5px;
-        align-self: flex-start;
-        visibility: visible;
-    }
-    .form{
-        margin-right: 40px;
-        width: max-content;
-    }
-    .space{
-        margin-top: 0px;
-    }
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+        gap: 30px;
+	}
+	.desktop {
+		display: flex;
+		justify-content: space-evenly;
+        width: 100%;
+	}
+	.title {
+		width: 0px;
+		height: 0px;
+		margin: 0px;
+		padding: 0px;
+		visibility: hidden;
+	}
+	.titleHidden {
+		width: auto;
+		height: auto;
+		background-color: $blue700;
+		padding: 0px 5px;
+		align-self: flex-start;
+		visibility: visible;
+	}
+	.form {
+		margin-right: 40px;
+		width: max-content;
+	}
+	.space {
+		margin-top: 0px;
+	}
 }
 
 @media (min-width: $breakpoint-tablet) {
-    .form{
-        margin-right: 80px;
-        width: max-content;
-    }
-    .titleHidden{
-        background-color: $blue700;
-        padding: 0px 5px;
-        align-self: flex-start;
-        visibility: visible;
-    }
+	.form {
+		margin-right: 80px;
+		width: max-content;
+	}
+	.titleHidden {
+		background-color: $blue700;
+		padding: 0px 5px;
+		align-self: flex-start;
+		visibility: visible;
+	}
 }
