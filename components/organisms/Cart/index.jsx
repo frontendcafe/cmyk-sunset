@@ -10,7 +10,7 @@ import { ShoppingContext } from 'context/ShoppingContext';
 import styles from './styles.module.scss';
 
 const Cart = () => {
-	const { orderData, itemsCount, totalItemCart } = useContext(ShoppingContext);
+	const { orderData, itemsCount } = useContext(ShoppingContext);
 
 	return (
 		<div className={`${styles.container}`}>
