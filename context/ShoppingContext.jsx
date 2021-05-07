@@ -57,9 +57,10 @@ export const ShoppingProvider = ({ children }) => {
 			-1;
 
 		if (cursor >= 0) {
-			cart.items[cursor].quantity += newItem.quantity || 1;
-			cart.items[cursor].total =
-				cart.items[cursor].quantity || 1 * newItem.price;
+			const {total: actualTotal, quantity: actualQuantity} = cart.items[cursor];
+
+			cart.items[cursor].total = actualTotal + (newItem.quantity * newItem.total);
+			cart.items[cursor].quantity = actualQuantity + newItem.quantity || 1;
 		} else {
 			cart.items.push(newItem);
 		}
@@ -124,7 +125,10 @@ export const ShoppingProvider = ({ children }) => {
 	}, [data]);
 
 	useEffect(() => {
-		if (!getCart()) setCart();
+		const cartData = getCart();
+
+		if (!cartData) setCart();
+		else setOrderData(cartData);
 	}, []);
 
 	useEffect(() => {
