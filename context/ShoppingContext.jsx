@@ -95,20 +95,25 @@ export const ShoppingProvider = ({ children }) => {
 	const setPayDelivery = payDeli => {
 		const cart = JSON.parse(localStorage.getItem('cart'));
 		cart.payMethod = payDeli.payMethod;
-		cart.payId = payDeli.payMethod;
-		cart.payStatus = payDeli.payMethod;
-		cart.deliveryMethod = payDeli.payMethod;
-		cart.deliveryAdress = payDeli.payMethod;
+		cart.payId = payDeli.payId;
+		cart.payStatus = payDeli.payStatus;
+		cart.deliveryMethod = payDeli.deliveryMethod;
+		cart.deliveryAdress = payDeli.deliveryAdress;
 
 		setOrderData(cart);
 
 		return order;
 	};
 
-	const checkout = async () => {
+	const checkout = async (data, callback) => {
 		const cart = JSON.parse(localStorage.getItem('cart'));
 		cart.orderStatus = 'finished';
 		cart.finished = true;
+		cart.userName = `${data.name} ${data.lastName}`;
+		cart.userId = btoa(`${data.name} ${data.lastName}`);
+		cart.deliveryAdress = data.adress;
+		cart.payStatus = 'FINISHED';
+		cart.payMethod = `CARD: **** **** **** ${data.numCard.substr((data.numCard.length - 4), data.numCard.length)}`
 
 		const requestOptions = {
 			method: 'POST',
@@ -116,9 +121,14 @@ export const ShoppingProvider = ({ children }) => {
 			body: JSON.stringify(cart),
 		};
 		const response = await fetch('/api/orders', requestOptions);
-		const resData = await response.json();
-		return resData;
+		
+		callback(response.status === 201);
 	};
+
+	const remove = () => {
+		setOrderData(null);
+		localStorage.removeItem('cart');
+	}
 
 	useEffect(() => {
 		if (data) setUser(data);
@@ -145,6 +155,7 @@ export const ShoppingProvider = ({ children }) => {
 				removeItemCart,
 				setPayDelivery,
 				checkout,
+				remove
 			}}>
 			{children}
 		</ShoppingContext.Provider>

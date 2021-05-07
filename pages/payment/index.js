@@ -9,7 +9,7 @@ import { ShoppingContext } from 'context/ShoppingContext';
 export default function Payment() {
   const router = useRouter();
   const { isLogged } = useContext(DataContext);
-  const { orderData, itemsCount } = useContext(ShoppingContext);
+  const { orderData, itemsCount, checkout, remove } = useContext(ShoppingContext);
 
   useEffect(() => {
     if (!isLogged()) router.push({
@@ -18,9 +18,16 @@ export default function Payment() {
     });
   }, []);
 
-  const handleOnSubmit = (data) => {
-    console.log(data);
+  const handleResponse = (success) => {
+    if (success) {
+      alert('Registramos tu compra! te enviaremos un correo');
+      remove();
+      router.push('/');
+    }
+    else alert('Ocurrio un error');
   }
+
+  const handleOnSubmit = (data) => checkout(data, handleResponse);
 
   return (
     <Container>
