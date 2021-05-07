@@ -8,7 +8,7 @@ import { DataContext } from 'context/DataContext';
 
 const Sidebar = ({ menuCollapse }) => {
 	const active = menuCollapse ? styles.active : '';
-	const { isLogged, data, logOut } = useContext(DataContext);
+	const { isStateLogged: isLogged, data, logOut } = useContext(DataContext);
 
 	let login = null;
 	if (isLogged()) {

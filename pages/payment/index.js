@@ -9,7 +9,8 @@ export default function Checkout() {
   const router = useRouter();
   const { isLogged } = useContext(DataContext);
 
-  useEffect(()=> {
+  useEffect(() => {
+    console.log(window.localStorate);
     if (!isLogged()) router.push({
       pathname: '/login',
       query: { redirectTo: 'payment' },

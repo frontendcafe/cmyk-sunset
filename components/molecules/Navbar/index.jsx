@@ -15,7 +15,7 @@ import styles from './styles.module.scss';
 
 const Navbar = ({ onChange, hasSearch }) => {
 	const [sidebarOpen, setSidebarOpen] = useState(false);
-	const { isLogged, logOut } = useContext(DataContext);
+	const { isStateLogged: isLogged, logOut } = useContext(DataContext);
 	const { itemsCount } = useContext(ShoppingContext);
 
 	const toggleMenuCollapse = () => {

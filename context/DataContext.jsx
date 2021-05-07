@@ -5,7 +5,10 @@ export const DataContext = createContext('');
 export const DataProvider = ({ children }) => {
 	const [data, setData] = React.useState();
 
-	const isLogged = () => !!data;
+	//That would be used to important validations that require instant response
+	const isLogged = () => localStorage.getItem('logged');
+
+	const isStateLogged = () => !!data;
 
 	const logIn = logged => {
 		setData(logged);
@@ -33,6 +36,7 @@ export const DataProvider = ({ children }) => {
 				isLogged,
 				logIn,
 				logOut,
+				isStateLogged
 			}}>
 			{children}
 		</DataContext.Provider>

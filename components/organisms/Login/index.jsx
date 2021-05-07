@@ -1,14 +1,21 @@
-import styles from './styles.module.scss';
-import {useContext} from 'react';
-import {DataContext} from 'context/DataContext';
+import { useContext, useEffect } from 'react';
+import { useRouter } from 'next/router';
+
+import { DataContext } from 'context/DataContext';
 import Title from 'components/atoms/Title';
 import Subtitle from 'components/atoms/Subtitle';
 import LoginForm from 'components/molecules/LoginForm';
 import AuthGoogleProvider from 'components/atoms/AuthGoogleProvider';
 
+import styles from './styles.module.scss';
+
 const Login = ({ defaultSize = 'md' }) => {
-  const { isLogged } = useContext(DataContext);
-  if (isLogged()) window.location.href = '/';
+	const router = useRouter();
+	const { isLogged } = useContext(DataContext);
+
+	useEffect(() => {
+		if (isLogged()) router.push('/');
+	}, []);
 
 	return (
 		<div className={styles.login}>
@@ -24,12 +31,20 @@ const Login = ({ defaultSize = 'md' }) => {
 					className={styles.titleRed}
 				/>
 			</header>
-			<body>
+			<main>
 				<div className={styles.left}>
-        <img src='/marvel.svg' alt='Portada Marvel' className={styles.marvelImg} />
-					<img src='/portrait.svg' alt='Portada Heroes' className={styles.heroesImg}  />
-        </div>
-        <div className={styles.redLine}></div>
+					<img
+						src='/marvel.svg'
+						alt='Portada Marvel'
+						className={styles.marvelImg}
+					/>
+					<img
+						src='/portrait.svg'
+						alt='Portada Heroes'
+						className={styles.heroesImg}
+					/>
+				</div>
+				<div className={styles.redLine}></div>
 
 				<div className={styles.right}>
 					<LoginForm className={styles.form} />
@@ -40,12 +55,11 @@ const Login = ({ defaultSize = 'md' }) => {
 								size={defaultSize}
 								className={styles.subtitle}
 							/>
-              
 						</div>
-            <AuthGoogleProvider className={styles.googleLogin} />
+						<AuthGoogleProvider className={styles.googleLogin} />
 					</div>
 				</div>
-			</body>
+			</main>
 		</div>
 	);
 };
